@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <title>Hyper Text Mark Up Language</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <img src="../assets/images/home/code.svg">
+            <h1>BitWise</h1>
+        </div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="courses.html">Back to courses</a>
+            <a href="WebDev.html">Back to modules</a>
+            <a href="css.html">Next module</a>
+        </div>
+    </nav>
+    <aside>
+        <a href="#html-intro">What is HTML?</a>
+        <a href="#structure">Structure of HTML page</a>
+        <a href="#explanation">HTML Explanation</a>
+        <a href="#attribute">Attributes</a>
+        <a href="#video">Video Explanation</a>
+    </aside>
+    <div class="body-container">
+        <div id="html-intro">
+            <h1>What is HTML?</h1>
+            <p>Hyper Text MarkUp Language.</p>
+            <p>It is just like human skeleton and css is just like skin to look good and js is brain</p>
+            <p>It will decide what to display from top to bottom and left to right on your webpage.</p>
+            <p>Hypertext refers to the way in which Webpages (HTML documents) are linked together.
+                Thus the link available on a webpage are called Hypertext.
+                As its name suggests,HTML is a Markup Language which means you use HTML to simply "mark up" a text
+                document with tags that tell a Web browser how to structure it to display.</p>
+            <img src="../assets/images/home/html-exp.jfif">
+            <h2>Another Example:</h2>
+            <img src="../assets/images/home/html-home.jfif">
+        </div>
+        <div id="structure">
+            <h1>Structure of HTML page</h1>
+            <img src="../assets/images/home/html-struc.PNG">
+            <h2 id="explanation">Explanation:</h2>
+            <p> !DOCTYPE html -> defines that this document is an HTML5 document<br>
+                html-> is the root element of the HTML page<br>
+                head-> element contain the meta information about the HTML page<br>
+                title ,/title -> specifies a title for the HTML page<br>
+                body-> element defines the document's body, and is a container for all the visible contents, such as
+                headings, paragraphs, images, hyperlinks, tables, lists, etc.<br>
+                HTML is not a programming language, it is a markup language which is used for describing webpages, A
+                markup language is a set of markup tags, and HTML uses these markup tags to give elements to the web
+            HTML tags are always surrounded by angle brackets(<>)<br>
+                    some tags require a closing tag as well some are self-closing tags, they do not require any
+                    closing tags for them. Examples of tags which needs a closing tag are HTML ,/HTML or BODY /BODY,
+                    they always come in pair, the first tag in a pair is the start tag, the second tag is end tag.<br>
+                    Examples of tags which have closing tags with them are br,img or b tag etc. Start and end tags are
+                    also called opening tags and closing tags. </p>
+            <h1 id="attribute">Attributes</h1>
+            <p>HTML elements can have added attributes as well, they
+                provide additional information about the element.<br>
+                Attributes are always specified in the start tag itself.<br>
+                Attributes come in name/value pairs like: name=”value”.<br>
+                Attribute values should always be enclosed in quotes.<br>
+                Double style quotes are the most common, but single style quotes are also allowed.</p>
+            <p>
+                EXAMPLE: -<br>
+
+                HTML links are defined with the a tag.<br>
+
+                    The link address is provided as an attribute href:<br>
+
+                    <img src="../assets/images/home/html-anchor.PNG" height="220px" width="700px"><br>
+                    <h1>Practice here(In Code Editor)</h1>
+                    <iframe src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
+                    </iframe><br><br>
+
+                    <p>Most of the times we want to have some characters displayed as it is on the web page but they get
+                    different meaning when we write them in code or sometimes, they get ignored as well. To solve this
+                    problem HTML includes some special entities which makes it easier to display character</p><br>
+                    <img src="../assets/images/home/html-chars.PNG" height="220px" width="700px">
+                    <h1>Practice here(In Code Editor)</h1>
+                    <iframe src="https://www.programiz.com/html/online-compiler/" width="90%" height="600"></iframe>
+                    <p>We will dive deep into HTML later</p>
+            </p>
+        </div>
+        <div id="video">
+            <h1>Video Explanation(In Tamil)</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Oes56FoYABc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+            <h1>Video Explanation(In English)</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qz0aGYrrlhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+
+</html>
