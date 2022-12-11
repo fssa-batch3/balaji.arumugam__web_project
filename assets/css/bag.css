@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    color:white;
+    font-family: 'PS Commons';
+}
+body p,li,h1,h2{
+  font-family:sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+}
+.course-page h1{
+    text-align: center;
+}
+.course-page .search{
+  margin-left: 250px;
+}
+.course-page input{
+    width: 70%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   background-color: #1f1f1f;
+   border: 1px solid #3b3838;
+   box-sizing: border-box;
+  }
+  .course-page input:focus{
+    border: 1px solid #3b3838;
+    color: white;
+  }
+  .course-page button{
+    color:white;
+    border: 1px solid #fd6228;
+    background-color: #fd6228;
+    padding: 12px 20px;
+}
+.courses{
+  margin-top: 100px;
+  margin-left: 260px;
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 60px;
+}
+.courses p{
+  font-family: cursive;
+}
+.courses .course1-content{
+    display: flex;
+    justify-content: space-around;
+  width: 900px;
+  height: 280px;
+  /* border: 1px solid white; */
+  padding: 23px;
+  background-color:  #1f1f1f ;
+  border-radius: 24px;
+}
+.course1-content .content-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.course1-content img{
+  border-radius: 10px;
+  width: 300px;
+  height: 250px;
+}
+.course1-content button{
+  cursor: pointer;
+  margin-left: 20px;
+}
+.course1-content{
+  text-align: center;
+}
+.course1-content #range{
+    margin-left: 50px;
+    accent-color:#fd6228;
+}
+.range-align{
+    width: 300px;
+    display: flex;
+
+}
