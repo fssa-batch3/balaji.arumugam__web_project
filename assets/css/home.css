@@ -5,7 +5,9 @@ body{
     height: 100%;
     width: 100%;
     color:white;
-    font-family: PS Commons;
+}
+body h1,h2{
+   font-family: "Raleway",sans-serif;
 }
 html{
    scroll-behavior: smooth;
