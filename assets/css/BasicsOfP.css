@@ -14,7 +14,8 @@ p,li{
     color: rgb(99, 101, 104);
 }
 h1,h2,h3{
-    font-family: "Barlow Condensed";
+    /* font-family: "Barlow Condensed"; */
+    font-family:Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
 }
 nav{
