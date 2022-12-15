@@ -8,12 +8,12 @@ body{
 }
 p,li{
    
-    font-family: Amiri;
+    font-family: "Amiri";
     font-size: 22px;
     color: rgb(99, 101, 104);
 }
 h1,h2,h3{
-    font-family: Barlow Condensed;
+    font-family: "Barlow Condensed";
     letter-spacing: 2px;
 }
 nav{
