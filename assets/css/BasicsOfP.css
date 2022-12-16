@@ -8,14 +8,14 @@ body{
 }
 p,li{
    
-    /* font-family:Amiri; */
-    font-family: sans-serif;
+    font-family:'Amiri',sans-serif;
+    /* font-family: sans-serif; */
     font-size: 22px;
     color: rgb(99, 101, 104);
 }
 h1,h2,h3{
-    /* font-family: "Barlow Condensed"; */
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Barlow Condensed',sans-serif;
+    /* font-family:Arial, Helvetica, sans-serif; */
     letter-spacing: 2px;
 }
 nav{
