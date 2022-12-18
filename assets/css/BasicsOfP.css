@@ -7,7 +7,6 @@ body{
     font-weight: bold;
 }
 p,li{
-   
     font-family:'Amiri',sans-serif;
     font-size: 22px;
     color: rgb(99, 101, 104);
@@ -53,5 +52,5 @@ aside a{
 }
 @keyframes dance{
     0%{transform: translateY(0px);}
-    50%{transform: translateY(-5px); font-size: 18px; letter-spacing: 2px;}
+    50%{transform: translateY(-5px); font-size: 18px;}
 }
