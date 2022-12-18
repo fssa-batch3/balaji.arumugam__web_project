@@ -184,7 +184,9 @@ footer .logo .heading {
   text-align: center;
   color: #fd6228;
 }
-
+footer .logo img{
+  margin-top: 25px;
+}
 footer .footer-1 {
   margin-top: 50px;
   display: flex;
