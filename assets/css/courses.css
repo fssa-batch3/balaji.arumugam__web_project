@@ -38,7 +38,11 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
-
+.logo img{
+  margin-top: 17px;
+  height: 35px;
+  padding: 0;
+}
 .links .home {
   color: white;
   border: 1px solid #fd6228;

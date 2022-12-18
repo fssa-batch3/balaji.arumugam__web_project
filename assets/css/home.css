@@ -33,6 +33,11 @@ html{
     display: flex;
     justify-content: space-between;
  }
+ .logo img{
+   margin-top: 15px;
+   height: 35px;
+   padding: 0;
+ }
  .links a{
      color:white;
      border: 1px solid #fd6228;
@@ -302,6 +307,9 @@ html{
  }
  footer .logo{
    margin-left:600px;
+ }
+ footer .logo img{
+   margin-top: 20px;
  }
  footer .logo .heading{
    margin-left:13px;
