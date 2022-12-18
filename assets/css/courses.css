@@ -59,13 +59,44 @@ h2 {
 }
 
 .links img {
+  margin-left: 20px;
   height: 50px;
 }
-
-/* .links a{
+.notify{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  position: fixed;
+  right:0;
+  background-color: grey;
+  margin: 50px;
+  height: 80px;
+  width: 200px;
+  border-radius: 10px;
+  z-index: 15;
+  opacity: 0;
+  animation-name: notify;
+  animation-delay: 2s;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+}
+.notify p{
+  margin-left: 10px;
+}
+.notify img{
+  width: 60px;
+}
+.notify .exit{
   position: relative;
-  bottom: 20px;
-} */
+  right: 4px;
+  bottom: 46px;
+  width: 15px;
+}
+@keyframes notify{
+  0%{opacity: 1;}
+  100%{opacity: 1;}
+}
 .course-page h1 {
   text-align: center;
 }
