@@ -90,7 +90,7 @@ h2 {
 .notify .exit{
   position: relative;
   right: 4px;
-  bottom: 46px;
+  bottom: 48px;
   width: 15px;
 }
 @keyframes notify{
