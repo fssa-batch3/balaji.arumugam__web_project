@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <title>Javascript Next Page</title>
+</head>
+
+<body>
+    <!-- header starts here -->
+    <nav id="navbar">
+        <div class="logo">
+            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
+            <h1>BitWise</h1>
+        </div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="courses.html">Back to courses</a>
+            <a href="WebDev.html">Back to modules</a>
+            <a href="FrontEnd.html">Next module</a>
+            <a href="JS-3.html">Next Page</a>
+        </div>
+    </nav>
+    <!-- aside bar starts here -->
+    <aside>
+        <a href="#boolean">What is Boolean?</a>
+        <a href="#undefined">Undefined</a>
+        <a href="#null">Null</a>
+        <a href="#difference">Difference</a>
+        <a href="#function">Function</a>
+        <a href="#call-function">Calling a function</a>
+        <a href="#why-function">Why Function</a>
+        <a href="#task1">Task 1-Function</a>
+        <a href="#conditions">If-Condition</a>
+
+    </aside>
+    <!-- Article starts here -->
+    <div class="body-container">
+        <div id="boolean">
+            <h1>Boolean</h1>
+            <p>At its most basic level, a computer is a series of on and off switches, a set of 0s and 1s that flip back
+                and flip in.</p>
+            <p>The concept of using binary values to represent information (0 and 1, true and false) is so fundamental
+                along with most other programming languages,it also has a dedicated type to
+                these values, referred to as a boolean.</p>
+            <h1>Creating a boolean value</h1>
+            <p>Boolean values can be created by assigning a value of <span>true</span> or <span>false</span> to a
+                variable.</p>
+
+            <p>
+                <span>
+                    var bool1 = true;<br>
+                    var bool2 = false;
+                </span>
+            </p>
+            <h1>Booleans from comparison operators</h1>
+            <p>
+                Boolean values can also be created by using comparison operators, such as:
+            </p>
+            <p>
+                * Greater Than - <span>></span><br>
+                * Less Than - <span>
+                    << /span><br>
+                        * Greater Than or Equal To - <span>>=</span><br>
+                        * Less Than or Equal To - <span>
+                            <=< /span><br>
+            </p>
+            <img src="../assets/images/JavaScript/bool.PNG" alt="image not found" width="900px">
+        </div>
+        <div id="undefined">
+            <h1>Undefined and Null values</h1>
+            <p>
+                When you declare a variable, its value is initialized to whatever value you assign by using the
+                <span>=</span> sign.
+            </p>
+            <p>
+                The following code snippet will initialize the variable as <span>pi</span> a number.
+            </p>
+            <p>var pi = 3.14159265359;</p>
+            <p>But what if we created a variable that didn’t assign any value,like this</p>
+            <p><span>var declareVariable;</span><br>
+                In this case, we will get declareVariable with an <span>undefined value</span>.<br>
+                This means you have not assigned an value to the variable.
+            </p>
+            <img src="../assets/images/JavaScript/undefined.PNG" alt="image not found" width="900px">
+            <h1 id="null">Null values</h1>
+            <p>Variables with a <span>null type</span>, on the other hand, represent values that are intentionally
+                empty. A <span>null variable</span> can be created by setting the variable equal to <span>null</span>.
+            </p>
+            <img src="../assets/images/JavaScript/null.PNG" alt="image not found" width="900px">
+
+        </div>
+        <div id="difference">
+            <h1>What’s the difference between undefined and null?</h1>
+            <p>Variables are only stored as <span>undefined</span> if they have been declared but not initialized with a
+                value.</p>
+            <p><span>Null values</span> intentionally are stored as null to indicate that the variable is empty. You
+                should set a variable equal to null and only if the variable is expected to have no value.</p>
+            <p>If this isn’t making sense right now, it’s ok.<br>
+                We will continue to touch on this concept in following explanation.</p>
+        </div>
+        <div id="function">
+            <h1>Functions:</h1>
+            <p>Now you have an understanding of the basic data types and operations, we should try to make our
+                programs a little more interesting. We will do this by manipulating the way in which the Javascript
+                program
+                executes. One way we can accomplish this is through the use of functions.</p>
+            <p>Functions allow us to repeat tasks that involve a similar sequence of steps. You’ve already seen the
+                console.log() function, which allows us to predictably log some output to the console.</p>
+
+            <p>Let’s look at an example of a function definition that finds the sum of two numbers:</p>
+            <p><span>var sum = function(x, y){<br>
+                    return x + y;<br>
+                    }</span></p>
+            <p>We start by creating a variable,then define a function by using the <span>function(){}</span> syntax.</p>
+            <p>Within the parentheses are a set of arguments, which are values that are used or manipulated by the
+                function in some manner. If you have multiple arguments, they are each separated by a comma. A function
+                can also have no arguments.</p>
+            <p>The code to be executed by the function lies within the curly braces ({}). If you expect the function to
+                give back some value, it should include a return statement (which is done by using the keyword return),
+                followed by the value you want to be returned. If you don’t expect your Javascript function to return a
+                value, you do not have to include a return statement.</p>
+            <p><span>You may notice if you run the code above, nothing happens. In order to make use of our function, we
+                    must invoke or call the function.</span></p>
+            <p id="call-function">A function is <span>called</span> like below:</p>
+            <p><span>functionName();</span></p>
+            <p>The parentheses together, <span>()</span>, are an operator that initiates a function call. If you have
+                arguments for the function to make use of, you must include those within the parenthesis.<br>
+                Let’s make use of the <span>sum</span> function we just created:</p>
+            <p><span>var onePlusTwo = sum(1, 2);<br>
+                    var twoPlusTwenty = sum(2, 20);<br>
+
+                    console.log(onePlusTwo, twoPlusTwenty);</span></p>
+            <p>
+                In this example, we make use of two different functions:<br>
+                *the <span>sum()</span> function, where we pass <span>two numbers</span> as arguments<br>
+                *the <span>console.log()</span> function, where we supply the <span>newly created variables</span> as
+                arguments<br>
+                In both cases where we use <span>sum()</span>, numbers are passed, so the value returned will also be a
+                number. This
+                number is then placed into the console using <span>console.log().</span>
+            </p>
+            <h1 id="why-function">Why are functions important?</h1>
+            <p>The reason to use functions is that they allow us to <span>reuse code</span> and create modules to
+                perform procedures we plan on using repeatedly. Though the example above isn’t much more useful than
+                just using the <span>+</span> operator, but  you will see that functions are very useful as your code starts to get more
+                complex.</p>
+                <h1 id="task1">Task:1(Function)</h1>
+                <p>Create a function named <span>Subtract</span> which allows values as two numbers and should return the result as number.</p>
+                <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
+                </iframe>
+                <p>Hope you have a good understanding on functions . Let's see about conditions in the following explanation.</p>
+        </div>
+        <div id="conditions">
+            <p>Let's see an real time example:<br>
+            </p>            
+        </div>
+    </div>
+</body>
+
+</html>

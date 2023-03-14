@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+
+<body>
+    <!-- header starts here -->
+    <nav id="navbar">
+        <div class="logo">
+            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
+            <h1>BitWise</h1>
+        </div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="SignUp.html">Sign Up</a>
+        </div>
+    </nav>
+
+    <div>
+        <div class="left">
+        
+        </div>
+        <div class="right">
+            <label>Username</label>
+            <input type="text" id="name" disabled>
+            <label>Email</label>
+            <input type="text" id="email" disabled>
+            <button id="edit">Edit</button>
+            <button id="save">Save</button>
+            <button id="delete">Delete</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        let details = JSON.parse(localStorage.getItem("profile_details"));
+        let arr = JSON.parse(localStorage.getItem("arr"));
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let password = document.getElementById("pass");
+        let res;
+        arr.find(element => {
+            if (element["user_name"] == details["username"] && element["password"] == details["password"]) {
+                return res = element;
+            }
+            else {
+                return res = 0;
+            }
+        });
+        if (res) {
+            name.value = res["user_name"]
+            email.value = res["email"]
+        }
+        else {
+            alert("error")
+        }
+        document.getElementById("edit").addEventListener("click", (e) => {
+            // name.removeAttribute("disabled", "")
+            email.removeAttribute("disabled", "")
+        })
+        document.getElementById("save").addEventListener("click", (e) => {
+            update();
+        })
+        document.getElementById("delete").addEventListener("click", (e) => {
+            // console.log(res)
+            // res["email"]="";
+            // res["user_name"]="";//1st
+            // arr.splice(,1)
+            let num=arr.indexOf(res);//0s
+            // console.log()
+            // res="";
+            // arr.splice(num,1) //3rd splice (1,1,replacement) //0,1,2,"2":"balaji"
+            delete arr[num];// arr["0"]2nd
+            // console.log(arr)
+
+            localStorage.setItem("arr", JSON.stringify(arr))
+        })
+        function update() {
+            res["email"] = document.getElementById("email").value;
+            console.log(res)
+            localStorage.setItem("arr", JSON.stringify(arr))
+            console.log(arr)
+        }
+    </script>
+</body>
+
+</html>

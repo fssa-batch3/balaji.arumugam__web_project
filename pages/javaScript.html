@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <!-- header starts here -->
+    <nav id="navbar">
+        <div class="logo">
+            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
+            <h1>BitWise</h1>
+        </div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="courses.html">Back to courses</a>
+            <a href="WebDev.html">Back to modules</a>
+            <a href="FrontEnd.html">Next module</a>
+            <a href="JS-2.html">Next Page</a>
+        </div>
+    </nav>
+    <!-- aside bar starts here -->
+    <aside>
+        <a href="#JS">What is JavaScript?</a>
+        <a href="#DOM">Understanding the DOM</a>
+        <a href="#variable">Creating a Variable</a>
+        <a href="#datatype">Datatype</a>
+        <a href="#numbers">1.Numbers</a>
+        <a href="#comment">2.Comments</a>
+        <a href="#multi">3.Multiply & divide numbers</a>
+        <a href="#modulo">4.The Modulo Operator</a>
+        <a href="#increment">5.Increment/Decre Number</a>
+        <a href="#unary">5.The Unary Operator</a>
+        <a href="#string">Strings</a>
+
+    </aside>
+    <!-- Article starts here -->
+    <div class="body-container">
+        <div id="JS" style="line-height:50px ;">
+            <h1>What is JavaScript?</h1>
+            <p>Javascript is the programming language of the web. So far, we have used HTML to structure the content of
+                our web pages and CSS to stylize our content.
+
+                But what if you want to have your web page change based on input from your user? Javascript allows us to
+                take our pages from static web pages to dynamic web applications.</p>
+
+        </div>
+        <div id="DOM">
+            <h1>Understanding the DOM</h1>
+            <p>One of the main reasons we use Javascript to build interactivity is because it allows us to manipulate
+                the Document Object Model (or DOM) for short.
+
+                The DOM stores HTML elements as objects that can then be manipulated in various ways.</p>
+            <img src="../assets/images/JavaScript/DOM_1.PNG">
+            <p>
+                Using Javascript, we can manipulate the DOM to do things like:<br>
+
+                1.Modify existing HTML elements<br>
+                2.Modify attributes on HTML elements<br>
+                3.Add or modify the CSS associated with HTML elements<br>
+                4.Add and delete HTML elements<br>
+                Let’s start looking at how we can use Javascript to build in interactivity to our websites by
+                capturing<br>
+                input from the DOM. Don’t worry if you don’t totally understand what the code is doing just yet.<br>
+            </p>
+            <p>Your JavaScript link should be in end of the body tag on HTML.So that, It will wait to perform function
+                after getting inputs from the User or command from the user.</p>
+            <img src="../assets/images/JavaScript/hello.PNG" width="900px">
+            <h1>Practice here(In Code Editor)</h1>
+            <!-- Code Editor starts here -->
+            <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
+            </iframe><br><br>
+            <p>Let’s dig in deeper and examine the first line in our code:</p>
+            <h2>var button = document.querySelector('button');</h2>
+            <p>
+                The var keyword is used to declare a variable. Variables are useful for storing data that we may want to
+                use later.<br>
+
+                The code after the = sign assigns a value to the variable. It does this by finding the first element in
+                the document that matches the selector wrapped in quotation marks, and then storing it in button.<br>
+
+                Therefore, the first line creates a variable and stores the first <span>button</span> element it finds
+                in our HTML.<br>
+
+                Just storing the <span>button</span> is fairly boring though. Our next step is to figure out how to
+                interact<br>
+                with the <span>button</span>. One of the main ways we can do this is by adding an event listener that
+                tells<br>
+                our program to execute some code when a user does something on the web page.
+            </p>
+            <h2>button.onclick = function(){
+                alert("Hello, World!");
+                }</h2>
+            <p>In the code above, we tell the program to execute the code stored in a <span>function</span> when a user
+                <span>clicks on the button</span>. Functions are used to store code you may want to execute more than
+                once.
+
+                In this case, the function will create a pop-up with the message <span>“Hello, World!”</span> every time
+                a user
+                clicks on the button.
+            </p>
+
+            <h1>Next steps</h1>
+            <p>Before we dive deeper into DOM manipulation, it is important to understand some programming
+                fundamentals. These fundamentals will allow you to engage more deeply with the different programming
+                interfaces the browser provides that allow you to interact with the DOM.</p>
+        </div>
+        <div id="variable">
+            <h1>Creating a Variable</h1>
+            <p>We create a variable with the let keyword. We write let and then the variable name and value on the right
+                hand side. We have to use =, just like a line from algebra.</p>
+            <p><span>let number = 10;</span></p>
+            <p>The variable number now has the value 10.</p>
+            <p>We can also use the var keyword to declare a variable. It does essentially the same thing but behaves a
+                little differently, sometimes in unexpected ways. let was added to the language in 2015.That's is the
+                latest one.</p>
+            <h1>Naming Variables</h1>
+            <p>
+                A variable name must follow these rules:
+            </p>
+            <p>
+                * Variable names must begin with a letter, $, or _<br>
+                * Variable names can contain letters, numbers, _, and $<br>
+                * Variables are case sensitive - number is different from Number<br>
+                * Reserved JavaScript keywords (such as let and var) cannot be used as variable names<br>
+            </p>
+            <p>As long as we follow these rules, we can name a variable whatever we like. The following are valid
+                JavaScript variable names.</p>
+               <p>Feel free to run this code and try out different variable names.</p> 
+               <img src="../assets/images/JavaScript/variable.PNG" alt="image not found" width="900px">
+        </div>
+        <div id="datatype">
+            <h1>Javascript data types</h1>
+            <p>
+                When it comes to programming,everything you do revolves around <span>storing and
+                    manipulating
+                    data</span>. This data always has a type associated with it that tells the computer exactly how to
+                handle the
+                data that it’s given. In Javascript, the data’s type is automatically determined when the code is
+                executed.
+                That's why Javascript is called <span>Dynamically typed language.</span><br>
+
+                What exactly do we mean by this? Let’s take a look at an example.<br>
+
+                (For your reference, console.log() outputs to the console whatever data is passed to it in between the
+                parenthesis. Run the code below to see the output.)
+            </p>
+            <p>
+                <span>
+                    var number1 = 10;<br>
+                    var number2 = 20;<br>
+                    console.log(number1 + number2);<br>
+                </span>
+            </p>
+            <p>
+                What do you expect this code to do?<br>
+
+                Javascript looks at the variables declared and determines they are both numbers. Javascript then knows
+                it needs to output the sum of the two numbers to the console.
+            </p>
+            <h1 id="numbers">1.Numbers</h1>
+            <p>Numbers are a numeric data type. Numbers can be integers, floating-point (numbers with a decimal), or
+                exponential values like those you would find with scientific calculator.</p>
+            <p>
+                <span>var number1 = 10; <br>
+                    var number2 = 20; <br>
+
+                    console.log(number1 + number2);<br>
+                </span>
+            </p>
+            <p>
+                All numbers in Javascript are stored using 64 bits of memory. it’s important to know that there are
+                finite limits to the size of number you can store.<br>
+                In practice, this shouldn’t be an issue, unless you’re working with really large numbers. Each
+                bit represents a binary value (e.g. 0 or 1). With 64 bits, the maximal integer you can represent is 2^53
+                - 1, or 9007199254740991.
+
+            </p>
+            <h1 id="comment">Comments</h1>
+            <p>A comment is something written in between actual code to help explain that code. JavaScript comments
+                start with two slashes //. Anything written on a line after // will not be interpreted as code and will
+                not run.</p>
+            <p>
+                // Comments help explain code.<br>
+                // Anything after the "//" on a line is a comment<br>
+                // and will not be interpreted as code.<br>
+
+                // This next line of code prints something to the console.<br>
+                console.log('Hi!'); // We can also have comments on the same line as code.<br>
+            </p>
+            <p>
+                Comments are a tool for developers to write notes on their code. They’re meant to explain complex pieces
+                of logic so that others can understand the code. The JavaScript engine will remove them before actually
+                running code.
+            </p>
+            <h2>Comment Blocks</h2>
+            <p>For large amounts of comments, we can use a comment block. A comment block is created with /* and */.
+                Anything between those two items, even across multiple lines, is a comment.</p>
+            <h1>2.Adding & subtracting numbers</h1>
+            <p>Use the + operator to add numbers and the - operator to subtract numbers.</p>
+            <p>
+                <span>
+                    console.log(50 + 50); //Addition operation on two numbers <br>
+                    console.log(40 - 10); //Subtraction operation on two numbers
+                </span>
+            </p>
+            <h1 id="multi">3.Multiplying & dividing numbers</h1>
+            <p>Use the * operator to multiply numbers and the / operator to divide numbers.</p>
+            <p>// use the * operator to multiply<br>
+                var multiply = 10*10;<br>
+
+                // use the / operator to divide<br>
+                var divide = 10 / 5;<br>
+
+                // operations on integers can result in floating point values, and vice versa<br>
+                var float = 10 / 3;<br>
+
+                console.log(multiply)//result is 100;<br>
+                console.log(divide)//result is 2;<br>
+                console.log(float)//result is 33.3;<br>
+            </p>
+            <!-- Code Editor starts here -->
+            <h1>Practice here</h1>
+            <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
+            </iframe><br><br>
+            <h1 id="modulo">4.The Modulo Operator</h1>
+            <p>The modulo operator,%, can be used to find the remainder of a division operation between two integer
+                values.</p>
+            <p>
+                <span>
+                    console.log(10 % 3); // 10 divides by 3 three times, with a remainder of 1<br>
+                    console.log(10 % 4); // 10 divides by 4 twice, with a remainder of 2<br>
+                    console.log(10 % 5); // 10 divides by 5 exactly twice, so no remainder<br>
+                </span>
+            </p>
+            <h1 id="increment">5.Incrementing/Decrementing Number Values</h1>
+            <p>You can increase or decrease a number’s value by adding, subtracting, multiplying, or dividing it by
+                another number:</p>
+            <p>
+                var num = 10;<br>
+            <p>
+                <span>
+                    // add 10 to the number<br>
+                    num = num + 10;<br>
+                    console.log("Add 10:", num);<br>
+                </span>
+            </p>
+            <p>
+                <span>
+                    // subtract 5 from the number<br>
+                    num = num - 5;<br>
+                    console.log("Subtract 5:", num);<br>
+                </span>
+            </p>
+            <p>
+                <span>
+                    // multiply the number by 7<br>
+                    num = num * 7;<br>
+                    console.log("Multiply by 7:", num);<br>
+                </span>
+            </p>
+            <p>
+                <span>
+                    // divide the number by 5<br>
+                    num = num / 5;<br>
+                    console.log("Divide by 5:", num);<br>
+                </span>
+            </p>
+            </p>
+            <p>You can simplify the above code by using +=, -=, *=, and /= shorthand operators to increase or decrease a
+                number’s value, like this</p>
+            <img src="../assets/images/JavaScript/number_uneray.PNG" width="900px">
+            <p>
+                These operations are often times referred to as incrementing or decrementing a value:<br>
+
+                1.in the case of +=, the value is being incremented by a constant value<br>
+                2.in the case of -=, the value is being decremented by a constant value<br>
+                3.in the case of *=, the value is being incremented by a multiple<br>
+                4.in the case of /=, the value is being decremented by a multiple<br>
+            </p>
+            <h1 id="Unary">6.++ and -- Operators(Uneray Operator)</h1>
+            <p>There are many instances where you will want to increment or decrement a value by one.</p>
+            <img src="../assets/images/JavaScript/num_uneray.PNG" alt="image not found" width="900px">
+            <p>In this case, you can use the ++ and -- operators as a further shorthand:</p>
+            <img src="../assets/images/JavaScript/num_unery.PNG" alt="image not found" width="900px">
+            <p>Now that you have learned about Numbers in javascript, let’s learn about Strings:)</p>
+
+            <h1 id="string">Strings</h1>
+            <p>Strings, another basic data type, represent a string (or sequence) of characters. Strings are how we
+                represent text values in our code.</p>
+            <p>Strings can be created by wrapping text in single ('') or double ("") quotation marks.</p>
+            <img src="../assets/images/JavaScript/string-1.PNG" alt="image not found" width="900px">
+            <h1>1.String operations</h1>
+            <p>Operations on strings are limited. For instance, you cannot subtract, multiply, or divide a string with
+                another string. You can, however, concatenate (combine) strings using the + operator.</p>
+            <img src="../assets/images/JavaScript/string_concate.PNG" alt="image not found" width="900px">
+            <h1>2.Escaping characters</h1>
+            <p>There are many string values that require escaped characters.</p>
+            <p>Let's say you want to include a quote in quotation marks. Do you think the following code will run
+                correctly?</p>
+            <p>If you run the following code, you’ll see that the <span>system throws an error.</span></p>
+            <img src="../assets/images/JavaScript/str-quota.PNG" alt="image not found" width="900px">
+            <p>This is because the <span>"</span> is a reserved character that indicates the start and end of a string.
+                In the above
+                code, we have two empty strings and some text in the middle that the program doesn’t recognize.
+            </p>
+            <p>In order to indicate that we want to use the " as a quotation mark, we have to escape the character using
+                a <span>backslash (\)</span>.</p>
+            <img src="../assets/images/JavaScript/str-double.PNG" alt="image not found " width="900px">
+            <p>
+                Let’s break down this example:<br>
+
+                *The first " indicates the start of the string<br>
+                *The escaped characters (\") are used to include quotation marks in the string<br>
+                *The last " indicates the end of the string<br>
+                There are a few different characters that you must escape in order for the program to interpret a string
+                in the correct way. These include:<br>
+                <span>
+                    *a single quote - \'<br>
+                    *a double quote - \"<br>
+                    *a backslash - \\<br>
+                </span>
+                Escaped characters can also be used to add tabs or go to the next line in your strings, with the
+                following:<br>
+                <span>
+                    *a new line - \n<br>
+                    *a tab - \t<br>
+                </span>
+            </p>
+            <img src="../assets/images/JavaScript/str-tab.PNG" alt="image not found" width="900px">
+            <p>Note:Click 'Next Page' to continue learning.</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

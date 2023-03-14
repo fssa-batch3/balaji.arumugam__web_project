@@ -60,6 +60,36 @@
             <h2>Part-2 Expalanation</h2>
             <iframe  width="560" height="315" src="https://www.youtube.com/embed/88QJumITbQA" title="YouTube video player" frameborder="5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <div id="comments">
+            Leave a comment:
+            <input type="text" id="comment">
+            <button id="btn">Submit</button>
+        </div>
     </div>
+
+
+    <script>
+        let comment_sec=document.getElementById("comments");
+        let btns=document.getElementById("btn");
+        let inputs=document.getElementById("comment");
+        btns.addEventListener("click",(e)=>{
+            // console.log("clicked")
+            if(inputs.value==""){
+                alert("add a comment");
+
+            }
+            else{
+            let date=new Date().toLocaleDateString();
+            let time=new Date().toLocaleTimeString();
+            let com=document.createElement("p");
+            com.innerText=inputs.value +"   "+ "Commented on-->"+ date + time;
+            comment_sec.append(com)
+            inputs.value="";
+        }
+            
+        })
+
+
+    </script>
 </body>
 </html>

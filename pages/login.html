@@ -26,14 +26,44 @@
         <img alt="image not found" class="lock" src="../assets/images/home/lock-removebg-preview.png" width="35px">
         <h1>Sign in</h1>
         <p>Connect to your Bitwise Account</p>
-        <form action="courses.html">
+        <!-- <form action="courses.html"> -->
             <label>Username</label>
-            <input type="text" placeholder="Username" value="Balaji Arumugam" required>
+            <input type="text" id="user" placeholder="Username"  required>
             <label>Password</label>
-            <input type="password"  placeholder="Password" value="Balaji Arumugam" required>
-            <button>Login</button>
-        </form> 
+            <input type="password" id="pass"  placeholder="Password" required>
+            <button onclick="check()">Login</button>
+        <!-- </form>  -->
     </div>
 </div>
+<script>
+    function check(){
+        let user=document.getElementById("user").value
+        let pass=document.getElementById("pass").value
+
+        let details=JSON.parse(localStorage.getItem("arr"))
+        let datas={
+            "username":user,
+            "password":pass
+        }
+        let res;
+        details.find(e=>{
+            if(e["user_name"]==user && e["password"]==pass){
+                 localStorage.setItem("profile_details",JSON.stringify(datas))
+                return res=1;
+            }
+            else{
+                return res=0;
+            }
+        })
+
+        if(res==1){
+            // alert("logged in")
+            window.location.href="profile.html"
+        }
+        else{
+            alert("error")
+        }
+    }
+</script>
 </body>
 </html>

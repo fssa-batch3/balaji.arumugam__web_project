@@ -33,7 +33,7 @@
     <section class="course-page">
         <h1>Learn Something new!!</h1>
         <div class="search">
-            <input type="search" placeholder="Search for courses,Topics,....">
+            <input id="search" type="search" placeholder="Search for courses,Topics,....">
             <button>Search</button>
         </div>
         <div class="courses">
@@ -65,15 +65,15 @@
                 <p>Take advantage of our easy set up and code editor to develop your skills.</p>
                 <a href="BOPCouse-intro.html"><button>Start learning</button></a>
             </div>
-            <div style="opacity: 0.4;" class="course1-content">
+            <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/DSA.jpg">
                 <h2>Data Structures and algorithms</h2>
                 <p>Take advantage of our easy set up and code editor to develop your skills.</p>
-                <button>Start learning</button>
+                <a href="DSAintro.html"><button>Start learning</button></a>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/server.webp">
-                <h2>Distributed Systems</h2>
+                <h2>distributed Systems</h2>
                 <p>Take advantage of our easy set up and code editor to develop your skills.</p>
                 <button>Start learning</button>
             </div>
@@ -105,6 +105,33 @@
             </div>
         </div>
     </footer>
+    <script>
+        let search=document.getElementById("search");
+        search.addEventListener("keyup",(e)=>{
+            // console.log(e.target.value.toLowerCase())
+            let word=e.target.value.toLowerCase();
+            let course=document.querySelectorAll(".course1-content");
+
+            // console.log(course[1])
+            course.forEach(element => {
+                // console.log(element)
+                let content=element.children[1].textContent.toLowerCase();
+                // console.log(element.children[1].textContent)
+                if(content.includes(word)){
+                    // console.log("matched");
+                    element.style.display="block";
+                }
+                else{
+                    // console.log("none")
+                    element.style.display="none";
+                }
+                
+            });
+
+
+        })
+        
+    </script>
 </body>
 
 </html>

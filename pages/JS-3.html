@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <!-- header starts here -->
+    <nav id="navbar">
+        <div class="logo">
+            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
+            <h1>BitWise</h1>
+        </div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="courses.html">Back to courses</a>
+            <a href="WebDev.html">Back to modules</a>
+            <a href="FrontEnd.html">Next module</a>
+            <a href="FrontEnd.html">Next Page</a>
+        </div>
+    </nav>
+    <!-- aside bar starts here -->
+    <aside>
+        <a href="#boolean">What is Boolean?</a>
+        <a href="#undefined">Undefined</a>
+        <a href="#null">Null</a>
+        <a href="#difference">Difference</a>
+        <a href="#function">Function</a>
+        <a href="#call-function">Calling a function</a>
+        <a href="#why-function">Why Function</a>
+        <a href="#task1">Task 1-Function</a>
+        <a href="#conditions">If-Condition</a>
+    </aside>
+    <!-- Article starts here -->
+    <div class="body-container">
+        <textarea id="html"></textarea>
+        <textarea id="css"></textarea>
+        <textarea id="js"></textarea>
+        <iframe id="output_window"></iframe>
+
+    </div>
+    <script>
+       
+        
+
+        function check() {
+            let html_div = document.getElementById("html").value;
+        let css_div = document.getElementById("css").value;
+        let js_div = document.getElementById("js").value;
+        let output = document.getElementById("output_window");
+            output.contentDocument.body.innerHTML = html_div + "<style>" + css_div + "</style>";
+            // output.contentWindow = eval(js_div);
+
+
+
+
+        }
+
+    </script>
+</body>
+
+
+</html>
