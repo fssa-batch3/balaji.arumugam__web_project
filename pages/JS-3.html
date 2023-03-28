@@ -55,10 +55,14 @@
         let js_div = document.getElementById("js").value;
         let output = document.getElementById("output_window");
             output.contentDocument.body.innerHTML = html_div + "<style>" + css_div + "</style>";
+<<<<<<< HEAD
+            output.contentWindow = eval(js_div);
+=======
             // output.contentWindow = eval(js_div);
 
 
 
+>>>>>>> d515a888c5371ce58146a79f71f63efbfb254ef0
 
         }
 

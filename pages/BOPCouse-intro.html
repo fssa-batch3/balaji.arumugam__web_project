@@ -40,7 +40,7 @@
             </div>
             <a href="BasicsOfProgramming.html"><button>Get Started</button></a>
         </div>
-        <img alt="image not found" class="img" src="../assets/images/home/prog.jpg">
+        <img data-id="BOP" alt="image not found" class="img" src="../assets/images/home/prog.jpg">
     </div>
     <!-- What are you going to learn in this course starts here -->
     <div class="learning">
@@ -101,5 +101,13 @@
         </div>
     </footer>
 </body>
+<script>
+    let course_id=document.getElementsByClassName("img");
+    let check_box=document.getElementsByClassName("radio");
+    // console.log(course_id[0]);
+    check_box[0].addEventListener("click",(e)=>{
+        console.log(course_id[0].dataset.id);
+    })
+</script>
 
 </html>

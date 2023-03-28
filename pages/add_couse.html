@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/SignUp.css">
+    <title>Adding course</title>
+</head>
+<body>
+    <!-- header starts here -->
+    <nav id="navbar">
+        <div class="logo">
+            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
+            <h1>BitWise</h1>
+        </div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="login.html">Sign In</a>
+        </div>
+    </nav>
+    <!--Sign Up page starts here -->
+    <div class="main">
+        <div class="SignUp">
+            <h1>Upload Courses</h1>
+    
+    <form id="course_form">
+        <label>Course Name</label>
+        <input type="text" placeholder="Java" id="course_name" required>
+        <label>Thumbnail</label>
+        <input type="file" id="image" required>
+        <label>Description</label>
+        <input type="text" placeholder="short intro" id="pass" required>
+        <button>Upload</button>
+    </form>
+    
+</body>
+<script>
+  document.getElementById("course_form").addEventListener("submit",(e)=>{
+    e.preventDefault();
+    upload();
+  })
+
+    function upload() {
+            let course_name = document.getElementById("course_name").value;
+            let thumbnail = document.getElementById("image").value;
+            let desc = document.getElementById("pass").value;
+
+            let course_data = {
+                "coursename": course_name,
+                "thumbnail": thumbnail,
+                "desc": desc
+            }
+            let arr = localStorage.getItem("course") ? JSON.parse(localStorage.getItem("course")) : [];
+            arr.push(course_data)
+            localStorage.setItem("course", JSON.stringify(arr))
+        }
+</script>
+</html>

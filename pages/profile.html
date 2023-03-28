@@ -77,8 +77,8 @@
             let num=arr.indexOf(res);//0s
             // console.log()
             // res="";
-            // arr.splice(num,1) //3rd splice (1,1,replacement) //0,1,2,"2":"balaji"
-            delete arr[num];// arr["0"]2nd
+            arr.splice(num,1) //3rd splice (1,1,replacement) //0,1,2,"2":"balaji"
+            // delete arr[num];// arr["0"]
             // console.log(arr)
 
             localStorage.setItem("arr", JSON.stringify(arr))
