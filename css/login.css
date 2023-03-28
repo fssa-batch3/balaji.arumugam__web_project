@@ -1,0 +1,76 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 850px;
+}
+.login{
+    border: 1px solid #2f2f31;
+    border-radius: 5px;
+    background-color: #141414;
+    width: 20%;
+    height: 460px;
+    /* margin: 500px 400px; */
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); */
+}
+.login p{
+  font-family: cursive;
+}
+.login form{
+    margin-top: 10px;
+  line-height: 40px;
+}
+.login input{
+   animation-name: inputdrop;
+   animation-duration: 2.5s;
+}
+@keyframes inputdrop{
+    0%{transform: translateX(-200px); opacity: 0;}
+    50%{transform: translateX(100px);}
+}
+.login button{
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 50px;
+    color:white;
+      border: 1px solid #fd6228;
+      background-color: #fd6228;
+      border-radius: 3px;
+      padding: 10px 27px;
+      width: 110px;
+      animation-name: drop;
+      animation-duration: 2.5s;
+}
+.login button:hover{
+    box-shadow: -1px -1px 20px #fd6228;
+    border-radius: 10px;
+}
+
+@keyframes drop{
+    0%{transform: translateY(-350px); opacity: 0;}
+    50%{transform: translateY(80px);}
+}
+.login form input{
+  display:block;
+}
+.login form input:focus{
+    color: white;
+}
+.login form input:valid{
+    color: white;
+}
+.login input{
+    width: 97%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   background-color: #1f1f1f;
+   border: 1px solid #3b3838;
+   box-sizing: border-box;
+  }
+  .login input:valid{
+    color:white;
+  }

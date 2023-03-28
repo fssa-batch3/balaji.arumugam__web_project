@@ -1,0 +1,70 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(247, 239, 239);
+    color:black;
+    font-weight: bold;
+}
+p,li{
+    font-family:'Amiri',sans-serif;
+    font-size: 22px;
+    color: rgb(99, 101, 104);
+}
+h1,h2,h3{
+    font-family: 'Barlow Condensed',sans-serif;
+    letter-spacing: 2px;
+}
+nav{
+    width: 1400px;
+}
+.body-container{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 280px;
+    width: 80%;
+}
+.body-container img{
+    margin: 10px;
+}
+aside{
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #393535;
+    float: left;
+    position: sticky;
+    top:100px;
+    width: 250px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside a{
+    line-height: 42px;
+    font-size: 20px;
+    margin-top: 20px;
+    color: #fd6228;
+    text-decoration: none;
+    animation-name: dance;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes dance{
+    0%{transform: translateY(0px);}
+    50%{transform: translateY(-5px); font-size: 18px;}
+}
+span{
+    color:#fd6228;
+}
+.body-container div{
+    line-height: 50px;
+}
+textarea{
+    height: 200px;
+    width: 500px;
+}
+iframe{
+    height: 300px;
+    width: 500px;
+}
