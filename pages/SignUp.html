@@ -53,7 +53,8 @@
             }
             let arr = localStorage.getItem("arr") ? JSON.parse(localStorage.getItem("arr")) : [];
             arr.push(user_data)
-            localStorage.setItem("arr", JSON.stringify(arr))
+            localStorage.setItem("arr", JSON.stringify(arr));
+            window.location.href="login.html";
         }
     </script>
 </body>
