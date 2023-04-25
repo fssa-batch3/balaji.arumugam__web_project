@@ -26,55 +26,72 @@
     <section class="course-page">
         <h1>Take the course from your bag</h1>
         <div class="search">
-            <input type="search" placeholder="Search for courses,Topics,....">
+            <input type="search" id="search" placeholder="Search for courses,Topics,....">
             <button>Search</button>
         </div>
-        <div class="courses">
-            <div class="course1-content">
-                <a href="thingsYouS.html"><img alt="image not found" src="../assets/images/home/tSK.jpg"></a>
+        <div  class="courses">
+            <div data-id="dsa" class="course1-content" style="display: none;">
+                <a href="DSAintro.html"><img alt="image not found" src="../assets/images/home/DSA.jpg"></a>
                 <div class="content-display">
-                    <h2>Things that you should know</h2>
+                    <h2>Data Structures and algorithms</h2>
                     <p>Basic Things that need for<br> developers
                         , our team cover it all.</p>
+                    <a href="DSAintro.html"><button>Continue learning</button></a>
+                    <div class="range-align">
+                        <p>Progress:</p>
+                        <input id="range" type="range" min="0" max="100" disabled>
+
+                    </div>
+                    <p>50% Completed</p>
+                </div>
+            </div>
+            <!-- <div data-id="tys" class="courses"> -->
+                <div data-id="tys" class="course1-content" style="display: none;">
+                    <a href="thingsYouS.html"><img alt="image not found" src="../assets/images/home/tSK.jpg"></a>
+                    <div class="content-display">
+                        <h2>Things that you should know</h2>
+                        <p>Basic Things that need for<br> developers
+                            , our team cover it all.</p>
                         <a href="thingsYouS.html"><button>Continue learning</button></a>
-                    <div class="range-align">
-                        <p>Progress:</p>
-                    <input id="range" type="range" disabled>
-                    
+                        <div class="range-align">
+                            <p>Progress:</p>
+                            <input id="range" type="range" disabled>
+
+                        </div>
+                        <p>50% Completed</p>
+                    </div>
                 </div>
-                <p>50% Completed</p>
+                <div data-id="Web" class="course1-content" style="display: none;">
+                    <a href="WebDev.html"><img alt="image not found" src="../assets/images/home/prog2.jpg"></a>
+                    <div class="content-display">
+                        <h2>Web development</h2>
+                        <p>Our team go through a strict <br>
+                            application and vetting process, leaving <br>
+                            only the best.</p>
+                        <a href="WebDev.html"><button>Continue learning</button></a>
+                        <div class="range-align">
+                            <p>Progress:</p>
+                            <input id="range" type="range" disabled>
+
+                        </div>
+                        <p>25% Completed</p>
+                    </div>
                 </div>
-            </div>
-            <div class="course1-content">
-                <a href="WebDev.html"><img alt="image not found" src="../assets/images/home/prog2.jpg"></a>
-                <div class="content-display">
-                    <h2>Web development</h2>
-                    <p>Our team go through a strict <br>
-                        application and vetting process, leaving <br>
-                        only the best.</p>
-                    <a href="WebDev.html"><button>Continue learning</button></a>
-                    <div class="range-align">
-                        <p>Progress:</p>
-                    <input id="range" type="range" disabled>
-                    
+                <div data-id="BOP" class="course1-content" style="display: none;">
+                    <a href="BasicsOfProgramming.html"><img alt="image not found"
+                            src="../assets/images/home/prog.jpg"></a>
+                    <div class="content-display">
+                        <h2>Basics of Programming</h2>
+                        <p>Take advantage of our easy set up<br> and code editor to develop your skills.</p>
+                        <a href="BasicsOfProgramming.html"><button>Continue learning</button></a>
+                        <div class="range-align">
+                            <p>Progress:</p>
+                            <input id="range" type="range" disabled>
+
+                        </div>
+                        <p>25% Completed</p>
+                    </div>
                 </div>
-                <p>25% Completed</p>
-                </div>
-            </div>
-            <div class="course1-content">
-                <a href="BasicsOfProgramming.html"><img alt="image not found" src="../assets/images/home/prog.jpg"></a>
-                <div class="content-display">
-                    <h2>Basics of Programming</h2>
-                    <p>Take advantage of our easy set up<br> and code editor to develop your skills.</p>
-                    <a href="BasicsOfProgramming.html"><button>Continue learning</button></a>
-                    <div class="range-align">
-                        <p>Progress:</p>
-                    <input id="range" type="range" disabled>
-                    
-                </div>
-                <p>25% Completed</p>
-                </div>
-            </div>
     </section>
     <!-- footer starts here -->
     <footer>
@@ -102,6 +119,67 @@
             </div>
         </div>
     </footer>
+    <script>
+        let courses = document.querySelectorAll(".course1-content");
+        let arr = JSON.parse(localStorage.getItem("bag_list"));
+        let user = JSON.parse(localStorage.getItem("profile_details"));
+        let course_progress=JSON.parse(localStorage.getItem("course_progress"));
+        let course_div;
+        // let pu=[];
+
+        courses.forEach((e) => {
+            //     console.log(e.dataset.id)
+            arr.find((el) => {
+                if (el["enrolled_course"] == e.dataset.id && el["user_name"]==user.username) {
+
+                    e.style.display = "flex";
+                    return course_div=el;
+                }
+               
+            })
+
+        })
+        console.log(course_div)
+
+        courses.forEach((e)=>{
+            if(e.style.display=="flex" && e.dataset.id==course_progress["course_name"] && course_div["user_name"]==user.username){
+                
+            }
+        })
+        // pu.push(course_div)
+        // console.log(pu)
+        
+
+//         course_progress.find((e)=>{
+//     if(e["user"]==user.username){
+       
+//     }
+// })
+    </script>
+    <script>
+        let search=document.getElementById("search");
+        search.addEventListener("keyup",(e)=>{
+            // console.log(e.target.value.toLowerCase())
+            let word=e.target.value.toLowerCase();
+            let course=document.querySelectorAll(".course1-content");
+
+            // console.log(course[1])
+            course.forEach(element => {
+                // console.log(element)
+                let content=element.children[1].textContent.toLowerCase();
+                // console.log(element.children[1].textContent)
+                if(content.includes(word)){
+                    // console.log("matched");
+                    element.style.display="flex";
+                }
+                else{
+                    // console.log("none")
+                    element.style.display="none";
+                }
+                
+            });
+        })
+    </script>
 </body>
 
 </html>

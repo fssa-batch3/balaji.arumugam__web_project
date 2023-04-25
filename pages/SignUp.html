@@ -27,7 +27,7 @@
         <div class="SignUp">
             <h1>Sign Up</h1>
             <p>Create your Bitwise Account</p>
-            <form onsubmit="signup()">
+            <form>
                 <label>Firstname</label>
                 <input type="text" placeholder="Username" id="name" required>
                 <label>Email</label>
@@ -41,6 +41,11 @@
         </div>
     </div>
     <script>
+        let form_signup=document.querySelector("form");
+        form_signup.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            signup();
+        })
         function signup() {
             let username = document.getElementById("name").value;
             let email = document.getElementById("mail").value;

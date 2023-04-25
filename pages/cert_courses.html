@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/WebDev.css">
-    <title>Web Development</title>
+    <title>Get Certified</title>
 </head>
 <body>
     <!-- header starts here -->
@@ -24,7 +24,7 @@
     </nav>
     <!-- Course Modules starts here -->
     <section class="course-page">
-        <h1>Choose Your Topics here!!</h1>
+        <h1>Get Your Certification here!!</h1>
         <div class="search">
             <input type="search"  id="search" placeholder="Search for courses,Topics,....">
             <button>Search</button>
@@ -33,63 +33,63 @@
             <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/web-design-concept-with-drawings.jpg">
                 <h2>What is Web development?</h2>
-                   <a href="WhatIsWebDev.html"><button>Know more</button></a>
+                   <a><button data-id="1">Get Certified</button></a>
             </div>
             <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Front end.jpg">
                 <h2>Front End Technologies</h2>
-                      <a href="FrontEnd.html"><button>Know more</button></a>
+                      <a><button data-id="2">Get Certified</button></a>
             </div>
             <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/html.jpg">
                 <h2>HTML</h2>
-                <a href="Learnhtml.html"><button>Know more</button></a>
+                <a><button data-id="3">Get Certified</button></a>
             </div>
             
             <div  class="course1-content">
                 <a href="css.html"><img alt="image not found" src="../assets/images/home/css.jpg"></a>
                 <h2>CSS</h2>
-                <a href="css.html"><button>Know more</button></a>
+                <a><button data-id="4">Get Certified</button></a>
             </div>
             <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Front end-js.jpg">
                 <h2>JavaScript</h2>
-                <a href="javaScript.html"><button>Know more</button></a>
+                <a><button data-id="5">Get Certified</button></a>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/github.png">
                 <h2>Git Hub</h2>
-                <button>Know more</button>
+                <button data-id="6">Get Certified</button>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Back end.jpg">
                 <h2>Back End Technologies </h2>
-                <button>Know more</button>
+                <button data-id="7">Get Certified</button>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Node.jpg">
                 <h2>Node .Js and Spring Boot</h2>
-                <button>Know more</button>
+                <button data-id="8">Get Certified</button>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/DBMS.jpg">
                 <h2>DBMS</h2>
-                <button>Know more</button>
+                <button data-id="9">Get Certified</button>
             </div>
             <div  style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/SQL.jpg">
                 <h2>SQL and No-sql</h2>
-                <button>Know more</button>
+                <button data-id="10">Get Certified</button>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/API.jpg">
                 <h2>APIs</h2>
-                <button>Know more</button>
+                <button data-id="11">Get Certified</button>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Rest API.jpg">
                 <h2>Rest API and SOAP UI</h2>
-                <button>Know more</button>
+                <button data-id="12">Get Certified</button>
             </div>
         </div>
     </section>
@@ -119,6 +119,13 @@
             </div>
         </div>
       </footer>
+      <script>
+        let cert_courses=document.querySelectorAll(".course1-content button");
+        // console.log(cert_courses)
+        cert_courses.forEach((e)=>{
+            e.parentElement.setAttribute("href","quiz.html?cert_id="+e.dataset.id)
+        })
+      </script>
       <script src="../assets/js/search.js"></script>
       <script src="../assets/js/tawk.js"></script>
 </body>
