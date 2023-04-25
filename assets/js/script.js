@@ -154,14 +154,17 @@ function showResult(){
         //creating a new span tag and passing the user score number and total question number
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
+        window.reload();
     }
     else if(userScore > 1){ // if user scored more than 1
         let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
+        window.reload();
     }
     else{ // if user scored less than 1
         let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
+        window.reload();
     }
     let user=JSON.parse(localStorage.getItem("profile_details"));
     let cert_details=JSON.parse(localStorage.getItem("Cert_details"));
