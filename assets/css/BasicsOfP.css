@@ -64,7 +64,35 @@ textarea{
     height: 200px;
     width: 500px;
 }
-iframe{
+/* iframe{
     height: 300px;
     width: 500px;
-}
+} */
+
+.progress-container {
+    width: 90%;
+    height: 8px;
+    background: #ccc;
+  }
+  
+  .progress-bar {
+    position: fixed;
+    height: 8px;
+    background: #fd6228;
+    width: 0%;
+  }
+  /* .header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+  } */
+
+  .body-container button{
+    color:white;
+    background:gray;
+    border-radius: 20px;
+    height: 80px;
+    width: 200px;
+  }
