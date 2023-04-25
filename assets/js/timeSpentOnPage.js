@@ -46,6 +46,7 @@ let courses = [{
 
 courses.find((e) => {
   if (e["cert_id"] == id) {
+    console.log(e)
     return cour = e;
   }
 })
@@ -67,6 +68,7 @@ let doSomething = function (message, time_spent) {
       arr.find(e => {
         if (e["user"] == user.username) {
           e["tab_warning_time"] = time_spent;
+          e["course"]=cour["course_name"]
           localStorage.setItem("Cert_details", JSON.stringify(arr))
         }
         else {
@@ -85,7 +87,7 @@ let doSomething = function (message, time_spent) {
       let cert_course = {
         "user": user.username,
         "tab_warning_time": time_spent,
-        "course": cour["course_name"]
+        "course":"html"
       }
       arr.push(cert_course)
       localStorage.setItem("Cert_details", JSON.stringify(arr))

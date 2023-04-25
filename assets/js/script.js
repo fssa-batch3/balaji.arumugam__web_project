@@ -154,29 +154,32 @@ function showResult(){
         //creating a new span tag and passing the user score number and total question number
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
-        window.reload();
+        // window.reload()
+        // window.close();
     }
     else if(userScore > 1){ // if user scored more than 1
         let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
-        window.reload();
+        // window.reload()
+        // window.close();
     }
     else{ // if user scored less than 1
         let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
-        window.reload();
+        // window.reload()
+        // window.close();
     }
     let user=JSON.parse(localStorage.getItem("profile_details"));
     let cert_details=JSON.parse(localStorage.getItem("Cert_details"));
     cert_details.find((e)=>{
-        if(e["user"]==user.username && e["tab_warning_time"]>=6){
+        if(e["user"]==user.username && e["tab_warning_time"]>=8){
                 e["score"]=userScore;
-                e["malpractice"]=true;
+                e["malpractice"]=false;
                 localStorage.setItem("Cert_details",JSON.stringify(cert_details))
         }
         else{
             e["score"]=userScore;
-            e["malpractice"]=false;
+            e["malpractice"]=true;
                 localStorage.setItem("Cert_details",JSON.stringify(cert_details))
         }
     })
