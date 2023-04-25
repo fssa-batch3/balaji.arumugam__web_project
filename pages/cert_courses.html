@@ -33,33 +33,33 @@
             <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/web-design-concept-with-drawings.jpg">
                 <h2>What is Web development?</h2>
-                   <a><button data-id="1">Get Certified</button></a>
+                   <a><button data-id="Web">Get Certified</button></a>
             </div>
             <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Front end.jpg">
                 <h2>Front End Technologies</h2>
-                      <a><button data-id="2">Get Certified</button></a>
+                      <a><button data-id="Fron-end">Get Certified</button></a>
             </div>
             <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/html.jpg">
                 <h2>HTML</h2>
-                <a><button data-id="3">Get Certified</button></a>
+                <a target="_blank"><button data-id="html">Get Certified</button></a>
             </div>
             
             <div  class="course1-content">
                 <a href="css.html"><img alt="image not found" src="../assets/images/home/css.jpg"></a>
                 <h2>CSS</h2>
-                <a><button data-id="4">Get Certified</button></a>
+                <a><button data-id="css">Get Certified</button></a>
             </div>
             <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Front end-js.jpg">
                 <h2>JavaScript</h2>
-                <a><button data-id="5">Get Certified</button></a>
+                <a><button data-id="js">Get Certified</button></a>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/github.png">
                 <h2>Git Hub</h2>
-                <button data-id="6">Get Certified</button>
+                <button data-id="Git">Get Certified</button>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Back end.jpg">
@@ -121,9 +121,22 @@
       </footer>
       <script>
         let cert_courses=document.querySelectorAll(".course1-content button");
+        let user=JSON.parse(localStorage.getItem("profile_details"));
+    let cert_details=JSON.parse(localStorage.getItem("Cert_details"));
         // console.log(cert_courses)
         cert_courses.forEach((e)=>{
-            e.parentElement.setAttribute("href","quiz.html?cert_id="+e.dataset.id)
+            cert_details.find((el)=>{
+                if(el["user"]==user.username && el["malpractice"]==true && el["score"]>=4 && el["course"]==e.dataset.id){
+                    e.parentElement.setAttribute("href","certificate.html")
+                    e.parentElement.setAttribute("target","_blank")
+                    // console.log(el)
+                }
+                else{
+                    e.parentElement.setAttribute("href","quiz.html?cert_id="+e.dataset.id)
+                }
+
+            })
+            
         })
       </script>
       <script src="../assets/js/search.js"></script>
