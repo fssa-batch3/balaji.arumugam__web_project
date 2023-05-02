@@ -66,6 +66,7 @@ let doSomething = function (message, time_spent) {
     //    "course":"html"
     // }
     let arr = localStorage.getItem("Cert_details") ? JSON.parse(localStorage.getItem("Cert_details")) : [];
+    
     console.log(arr);
     if (JSON.parse(localStorage.getItem("Cert_details"))) {
 
