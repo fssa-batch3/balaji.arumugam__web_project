@@ -1,0 +1,132 @@
+#left {
+    float: left;
+    width: calc(60vw - 30px);
+    height: calc(100vh - 100px);
+}
+#right_aside{
+    float: left;
+}
+#right {
+    float: left;
+    width: 40%;
+    height: calc(100vh - 100px);
+}
+
+#left,
+#prompt,
+#list {
+    border: 1px solid grey;
+    background-color: white;
+    padding: 6px;
+    overflow: auto
+}
+
+#list li:hover {
+    background: #ddd
+}
+
+#menu button {
+    font-family: Lato, arial;
+    border-radius: 3px;
+    border: none;
+    padding: 3px 6px
+}
+
+#right textarea {
+    display: block;
+    width: 96%;
+    margin: 3px auto;
+    background: #eee
+}
+
+.prompt {
+    color: #322;
+    background: #ccc;
+    padding: 6px;
+}
+
+.markdown code {
+    background: #f0f0f0;
+    color: navy;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.markdown pre {
+    background: #f0f0f0;
+    margin: 16px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.markdown pre:hover button {
+    display: block;
+}
+
+.markdown pre button {
+    display: none;
+    float: right;
+    margin: 4px
+}
+
+.markdown blockquote {
+    background: #f0f0f0;
+    border-left: 6px solid grey;
+    padding: 8px
+}
+
+.markdown table {
+    margin: 12px;
+    border-collapse: collapse;
+}
+
+.markdown th {
+    border: 1px solid grey;
+    background: lightgrey;
+    padding: 6px;
+}
+
+.markdown td {
+    border: 1px solid grey;
+    padding: 6px;
+}
+
+.markdown tr:nth-child(even) {
+    background: #f0f0f0;
+}
+#content{
+    position: fixed;
+    z-index: 5;
+    bottom:0px;
+    /* top: 100px; */
+    left: 28px;  
+}
+
+.open-button {
+  padding:10px 40px;
+  background-color: #04AA6D;
+  color: white;
+  font-size:17px;
+  max-width:300px;
+  border-radius:20px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0px;
+  left: 28px;  
+}
+
+
+/* Set a style for the submit/send button */
+.btn {
+  background-color: #04AA6D;
+  color: white;
+   font-size:17px;
+  padding: 10px 20px;
+  border: none;
+  border-radius:20px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+}
