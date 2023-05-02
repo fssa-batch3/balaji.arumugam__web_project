@@ -127,6 +127,7 @@
         cert_courses.forEach((e)=>{
             cert_details.find((el)=>{
                 if(el["user"]==user.username && el["malpractice"]==false && el["score"]>=4 && el["course"]==e.dataset.id){
+                    e.innerText="View Certificate"
                     e.parentElement.setAttribute("href","certificate.html")
                     e.parentElement.setAttribute("target","_blank")
                     // console.log(el)
@@ -140,6 +141,6 @@
         })
       </script>
       <script src="../assets/js/search.js"></script>
-      <script src="../assets/js/tawk.js"></script>
+      <!-- <script src="../assets/js/tawk.js"></script> -->
 </body>
 </html>

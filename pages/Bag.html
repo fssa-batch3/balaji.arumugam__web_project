@@ -39,7 +39,7 @@
                     <a href="DSAintro.html"><button>Continue learning</button></a>
                     <div class="range-align">
                         <p>Progress:</p>
-                        <input id="range" type="range" min="0" max="100" disabled>
+                        <input id="range" type="range" disabled>
 
                     </div>
                     <p>50% Completed</p>
@@ -142,7 +142,16 @@
         console.log(course_div)
 
         courses.forEach((e)=>{
-            if(e.style.display=="flex" && e.dataset.id==course_progress["course_name"] && course_div["user_name"]==user.username){
+            if(e.style.display=="flex"){
+                course_progress.find((el)=>{
+                    if(e.dataset.id==el["course_name"] && el["user"]==user.username){
+                        // console.log(e.children[1].children[3].children[0])
+                        e.children[1].children[3].children[0].innerText=e.children[1].children[3].children[0].textContent+" " +el["sub-module"].toUpperCase()
+                        e.children[1].children[3].children[1].setAttribute("step",el["percentage"])
+                        e.children[1].children[4].innerText=el["percentage"]+"% Completed"
+                    }
+                })
+                // && e.dataset.id==course_progress["course_name"] && course_div["user_name"]==user.username
                 
             }
         })

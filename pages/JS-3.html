@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
     <link rel="stylesheet" href="../lib/css/editor-styles.css">
+    <link rel="stylesheet" href="../assets/css/gpt.css">
+    <script src="../assets/js/gpt.js"></script>
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
     <title>Code Editor</title>
 </head>
@@ -51,6 +53,20 @@
         </div>
         <h4>Output:</h4>
         <iframe id="output_window"></iframe>
+    </div>
+    <div id="chat">
+        <button class="open-button"onclick="openForm()">Chat</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                Tech Assistant:
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 200px;"></textarea>
+                <div id="list" style="height:300px;width:200px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+        
+    </div>
 
     </div>
     <div class="editor">
@@ -71,25 +87,33 @@
             </div>
         </div>
     </div>
+
     <script>
+        function openForm() {
+  document.getElementById("content").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("content").style.display = "none";
+}
         let html_div = document.getElementById("html");
-            let css_div = document.getElementById("css");
-            let js_div = document.getElementById("js");
-        let codes= localStorage.getItem("Editor_code") ? JSON.parse(localStorage.getItem("Editor_code")) :{};;
-            // console.log(codes["html"])
-            html_div.value=codes["html"];
-            css_div.value=codes["css"]
-            js_div.value=codes["js"]
+        let css_div = document.getElementById("css");
+        let js_div = document.getElementById("js");
+        let codes = localStorage.getItem("Editor_code") ? JSON.parse(localStorage.getItem("Editor_code")) : {};;
+        // console.log(codes["html"])
+        html_div.value = codes["html"];
+        css_div.value = codes["css"]
+        js_div.value = codes["js"]
 
         function check() {
-            
-            let code={
-                "html":html_div.value,
-                "css":css_div.value,
-                "js":js_div.value
+
+            let code = {
+                "html": html_div.value,
+                "css": css_div.value,
+                "js": js_div.value
             }
-            localStorage.setItem("Editor_code",JSON.stringify(code))
-            
+            localStorage.setItem("Editor_code", JSON.stringify(code))
+
 
             let output = document.getElementById("output_window");
             output.contentDocument.body.innerHTML = html_div.value + "<style>" + css_div.value + "</style>";
@@ -99,7 +123,7 @@
         document.getElementById("html").addEventListener("keyup", check)
         document.getElementById("css").addEventListener("keyup", check)
         document.getElementById("js").addEventListener("keyup", check)
-    
+
     </script>
     <script src="../lib/js/ace-editor/src-min/ace.js"></script>
     <script src="../lib/js/ace-editor/src-min/mode-javascript.js"></script>

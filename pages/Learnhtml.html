@@ -40,7 +40,7 @@
                 <div class="progress-bar" id="myBar"></div>
             </div>
         <!-- </div> -->
-        <div  id="html-intro">
+        <div id="html-intro">
             <h1>What is HTML?</h1>
             <p>Hyper Text MarkUp Language.</p>
             <p>It is just like human skeleton and css is just like skin to look good and js is brain</p>
@@ -118,56 +118,7 @@
         </div>
     </div>
 
-    <script>
-        // When the user scrolls the page, execute myFunction
-        let prog;
-        let course=document.querySelector(".body-container");
-        let sub=document.querySelector(".progress-container");
-        let user = JSON.parse(localStorage.getItem("profile_details")) 
-       
-        // console.log(course)
-        let progress_percent;
-        window.onscroll = function () { myFunction() };
-
-        function myFunction() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            // if(winScroll<0){
-            //     console.log("scrolling down")
-            // }
-            let scrolled = (winScroll / height) * 100;
-            // console.log(scrolled)
-            progress_percent=Math.floor(scrolled)
-            
-            document.getElementById("myBar").style.width = scrolled + "%";
-            // return prog=progress_percent;
-            let progress={
-                "user":user.username,
-                "percentage":progress_percent,
-                "course_name":course.dataset.id,
-                "sub-module":sub.dataset.id
-            }
-            if(progress_percent === 100){
-                console.log(progress_percent)
-                alert("You reached the end")
-            }
-            // console.log(progress)
-            // localStorage.setItem("course_progress", JSON.stringify(progress));
-            // let arr = localStorage.getItem("course_progress_original") ? JSON.parse(localStorage.getItem("course_progress_original")) : [];
-        // let arr=[];
-        // let course_prog=JSON.parse(localStorage.getItem("course_progress"));
-        // arr.push(course_prog)
-        // localStorage.setItem("course_progress_original",JSON.stringify(arr))
-        // return prog=progress;           
-        // console.log(arr)
-        }
-        // console.log(arr)
-        
-            console.log(prog)
-        
-        // arr.push(progress)
-        // localStorage.setItem("course_progress", JSON.stringify(prog));
-       
+    <script src="../assets/js/progress.js">
     </script>
     <script src="../assets/js/tawk.js"></script>
 </body>

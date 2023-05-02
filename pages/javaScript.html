@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <link rel="stylesheet" href="../assets/css/gpt.css">
+    <script src="../assets/js/gpt.js"></script>
     <!-- <link rel="stylesheet" href="../lib/css/editor-styles.css"> -->
     <title>JavaScript</title>
 </head>
@@ -28,7 +30,7 @@
     </nav>
     <!-- aside bar starts here -->
     <aside>
-        <a href="#JS">What is JavaScript?</a>
+        <a href="#JS" class="live">What is JavaScript?</a>
         <a href="#DOM">Understanding the DOM</a>
         <a href="#variable">Creating a Variable</a>
         <a href="#datatype">Datatype</a>
@@ -41,8 +43,23 @@
         <a href="#string">Strings</a>
 
     </aside>
+    <div id="chat">
+        <button class="open-button"onclick="openForm()">Tech Assistant</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 300px;"></textarea>
+                <div id="list" style="height:300px;width:300px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+        
+    </div>
     <!-- Article starts here -->
-    <div class="body-container">
+    <div data-id="Web" class="body-container">
+        <div data-id="JS" class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
         <div id="JS" style="line-height:50px ;">
             <h1>What is JavaScript?</h1>
             <p>Javascript is the programming language of the web. So far, we have used HTML to structure the content of
@@ -251,30 +268,38 @@
                 var num = 10;<br>
             <p>
                 <span>
+                    <code>
                     // add 10 to the number<br>
                     num = num + 10;<br>
                     console.log("Add 10:", num);<br>
+                </code>
                 </span>
             </p>
             <p>
                 <span>
+                    <code>
                     // subtract 5 from the number<br>
                     num = num - 5;<br>
                     console.log("Subtract 5:", num);<br>
+                </code>
                 </span>
             </p>
             <p>
                 <span>
+                    <code>
                     // multiply the number by 7<br>
                     num = num * 7;<br>
                     console.log("Multiply by 7:", num);<br>
+                </code>
                 </span>
             </p>
             <p>
                 <span>
+                    <code>
                     // divide the number by 5<br>
                     num = num / 5;<br>
                     console.log("Divide by 5:", num);<br>
+                </code>
                 </span>
             </p>
             </p>
@@ -345,8 +370,31 @@
             <img src="../assets/images/JavaScript/str-tab.PNG" alt="image not found" width="900px">
             <p>Note:Click 'Next Page' to continue learning.</p>
         </div>
-
+        
     </div>
+<script>
+    function openForm() {
+  document.getElementById("content").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("content").style.display = "none";
+}
+     let tabs=document.querySelectorAll("aside a");
+     tabs.forEach((e)=>{
+        e.addEventListener("click",(el)=>{
+            console.log(el.target.classList.add('live'))
+            
+        })
+     })
+</script>
+
+<script src="../assets/js/progress.js">
+</script>
+
+
+
+
     <script src="../assets/js/params.js"></script>
  <script src="../assets/js/tawk.js"></script>
 </body>
