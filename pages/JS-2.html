@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <link rel="stylesheet" href="../assets/css/gpt.css">
+    <script src="../assets/js/gpt.js"></script>
     <title>Javascript Next Page</title>
 </head>
 
@@ -36,9 +38,22 @@
         <a href="#why-function">Why Function</a>
         <a href="#task1">Task 1-Function</a>
         <a href="#conditions">If-Condition</a>
+        <a class="home" href="cert_courses.html">Get Certified</a>
 
     </aside>
     <!-- Article starts here -->
+    <div id="chat">
+        <button class="open-button"onclick="openForm()">Tech Assistant</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 300px;"></textarea>
+                <div id="list" style="height:300px;width:300px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+        
+    </div>
     <div class="body-container">
         <div data-id="JS" class="progress-container">
             <div class="progress-bar" id="myBar"></div>
