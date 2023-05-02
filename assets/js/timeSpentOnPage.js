@@ -24,10 +24,14 @@ this.new_d = new Date();
 
 document.addEventListener(visibilityChange, (function (e) {
   if (document[state] === 'visible') {
-    _this.d = new Date();
+    _this.d = new Date().getSeconds();
+    console.log(new Date().getSeconds())
   } else if (document[hidden]) {
-    _this.new_d = new Date();
-    var time_spent = Math.round((_this.new_d - _this.d) / 1000);
+    _this.new_d = new Date().getSeconds();
+    console.log(new Date().getSeconds())
+    var time_spent = Math.round((_this.new_d - _this.d));
+    // var time_spent=_this.new_d-_this.d
+    console.log(time_spent + "seconds");
     doSomething("Changed Tab", time_spent);
   }
 
@@ -54,7 +58,7 @@ courses.find((e) => {
 let doSomething = function (message, time_spent) {
   if (time_spent >= 1) {
     // var text = "["+message+"] "+time_spent+" seconds"
-    console.log(time_spent + "seconds");
+    // console.log(time_spent + "seconds");
 
     // let cert_course={
     //    "user":user.username,
@@ -68,17 +72,18 @@ let doSomething = function (message, time_spent) {
       arr.find(e => {
         if (e["user"] == user.username) {
           e["tab_warning_time"] = time_spent;
-          e["course"]=cour["course_name"]
+          e["course"] =id
           localStorage.setItem("Cert_details", JSON.stringify(arr))
         }
         else {
           let cert_course = {
             "user": user.username,
             "tab_warning_time": time_spent,
-            "course": cour["course_name"]
+            "course":id
           }
           arr.push(cert_course)
           localStorage.setItem("Cert_details", JSON.stringify(arr))
+          // console.log("else")
 
         }
       })
@@ -87,7 +92,7 @@ let doSomething = function (message, time_spent) {
       let cert_course = {
         "user": user.username,
         "tab_warning_time": time_spent,
-        "course":"html"
+        "course":id
       }
       arr.push(cert_course)
       localStorage.setItem("Cert_details", JSON.stringify(arr))

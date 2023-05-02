@@ -169,17 +169,18 @@ function showResult(){
         // window.reload()
         // window.close();
     }
+    // console.log("do"+doSomething())
     let user=JSON.parse(localStorage.getItem("profile_details"));
     let cert_details=JSON.parse(localStorage.getItem("Cert_details"));
     cert_details.find((e)=>{
         if(e["user"]==user.username && e["tab_warning_time"]>=8){
                 e["score"]=userScore;
-                e["malpractice"]=false;
+                e["malpractice"]=true;
                 localStorage.setItem("Cert_details",JSON.stringify(cert_details))
         }
         else{
             e["score"]=userScore;
-            e["malpractice"]=true;
+            e["malpractice"]=false;
                 localStorage.setItem("Cert_details",JSON.stringify(cert_details))
         }
     })
