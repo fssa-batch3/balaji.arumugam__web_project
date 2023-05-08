@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <link rel="stylesheet" href="../assets/css/gpt.css">
+    <script src="../assets/js/gpt.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="../assets/js/check_api.js"></script>
     <title>Hyper Text Mark Up Language</title>
@@ -29,14 +31,26 @@
     </nav>
     <!-- aside bar starts here -->
     <aside>
-        <a href="#html-intro">What is HTML?</a>
-        <a href="#structure">Structure of HTML page</a>
-        <a href="#explanation">HTML Explanation</a>
-        <a href="#attribute">Attributes</a>
-        <a href="#video">Video Explanation</a>
+        <a href="#api-intro">What is API?</a>
+        <a href="#benefits">Benefits Of Using API</a>
+        <a href="#http">HTTP requests</a>
+        <a href="#ajax">AJAX</a>
+        <a href="#ajaxbenifits">Benifits of AJAX</a>
+        <a href="#ajaxcode">Syntax of AJAX</a>
     </aside>
     <!-- Article starts here -->
+    <div id="chat">
+        <button class="open-button" onclick="openForm()">Tech Assistant</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 300px;"></textarea>
+                <div id="list" style="height:300px;width:300px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
 
+    </div>
     <div data-id="Web" class="body-container">
         <!-- <div class="header"> -->
         <div data-id="api" class="progress-container">
@@ -60,7 +74,7 @@
             <img alt="image not found"
                 src="https://lh4.googleusercontent.com/rKoHyX6rc8aOY19aB45b44tBmOX2eA6A9hCk31YbxI4teiRF79um9Sagx3Zuxu427LVIZFdineD_UQllQMufP36blApzosxJuRryNl8EtWctHTQnNDx5JdKGjJTOBKkIwqOwRbli">
         </div>
-        <div id="structure">
+        <div id="benefits">
             <h1>Benefits Of Using API</h1>
             <!-- <img alt="image not found" src="../assets/images/home/html-struc.PNG"> -->
             <p id="explanation">APis needed to make the connection between application functions to handle the data from
@@ -88,7 +102,7 @@
 
         </div>
         <div>
-            <h3>HTTP REQUESTS:</h3>
+            <h3 id="http">HTTP REQUESTS:</h3>
             <p>HTTP means HyperText Transfer Protocol. It is the underlying protocol used by the World Wide Web that
                 defines how messages are formatted and transmitted.</p>
             <p>HTTP is a stateless protocol. </p>
@@ -117,7 +131,7 @@
         </div>
         <div>
             <p>There are several ways to get the data from an API.</p>
-            <h1>AJAX:</h1>
+            <h1 id="ajax">AJAX:</h1>
             <p>
                 *AJAX stands for Asynchronous JavaScript And XML.<br>
                 *It is about updating a web page without reloading the entire web page.<br>
@@ -135,7 +149,7 @@
             <p>AJAX is not a programming or a scripting language. It is a group of inter-related technologies
 
                 like JavaScript, XML, HTML, CSS, and DOM</p>
-            <h3>Benifits of AJAX:</h3>
+            <h3 id="ajaxbenifits">Benifits of AJAX:</h3>
             <p> • Update a web page without reloading the page<br></p>
 
             <p>• Receive and send data asynchronously<br></p>
@@ -143,7 +157,7 @@
             <p>• Send only important data to the server<br></p>
 
             <p>• Makes the application faster<br></p>
-            <h3>AJAX Request</h3>
+            <h3 id="ajaxcode">AJAX Request</h3>
             <p>AJAX communicates asynchronously with the server using the XMLHttpRequest object.</p>
             <p>To send an HTTP request, create an XMLHttpRequest object, open a URL, and send the request.
 
@@ -230,7 +244,15 @@
                 allowfullscreen></iframe>
         </div> -->
     </div>
+<script>
+    function openForm() {
+            document.getElementById("content").style.display = "block";
+        }
 
+        function closeForm() {
+            document.getElementById("content").style.display = "none";
+        }
+</script>
     <script src="../assets/js/progress.js">
     </script>
     <script src="../assets/js/tawk.js"></script>
