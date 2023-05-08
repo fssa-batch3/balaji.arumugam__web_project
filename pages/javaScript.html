@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
-    
+
     <link rel="stylesheet" href="../assets/css/gpt.css">
     <script src="../assets/js/gpt.js"></script>
     <!-- <link rel="stylesheet" href="../lib/css/editor-styles.css"> -->
@@ -48,7 +48,7 @@
 
     </aside>
     <div id="chat">
-        <button class="open-button"onclick="openForm()">Tech Assistant</button>
+        <button class="open-button" onclick="openForm()">Tech Assistant</button>
         <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
             <div id="right">
                 <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 300px;"></textarea>
@@ -57,7 +57,7 @@
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </div>
         </div>
-        
+
     </div>
     <!-- Article starts here -->
     <div data-id="Web" class="body-container">
@@ -94,7 +94,7 @@
             <p>Your JavaScript link should be in end of the body tag on HTML.So that, It will wait to perform function
                 after getting inputs from the User or command from the user.</p>
             <img src="../assets/images/JavaScript/hello.PNG" width="900px">
-            
+
 
             <h1>Practice here(In Code Editor)</h1>
             <!-- Code Editor starts here -->
@@ -157,8 +157,8 @@
             </p>
             <p>As long as we follow these rules, we can name a variable whatever we like. The following are valid
                 JavaScript variable names.</p>
-               <p>Feel free to run this code and try out different variable names.</p> 
-               <img src="../assets/images/JavaScript/variable.PNG" alt="image not found" width="900px">
+            <p>Feel free to run this code and try out different variable names.</p>
+            <img src="../assets/images/JavaScript/variable.PNG" alt="image not found" width="900px">
         </div>
         <div id="datatype">
             <h1>Javascript data types</h1>
@@ -374,33 +374,33 @@
             <img src="../assets/images/JavaScript/str-tab.PNG" alt="image not found" width="900px">
             <p>Note:Click 'Next Page' to continue learning.</p>
         </div>
-        
+
     </div>
-<script>
-    function openForm() {
-  document.getElementById("content").style.display = "block";
-}
+    <script>
+        function openForm() {
+            document.getElementById("content").style.display = "block";
+        }
 
-function closeForm() {
-  document.getElementById("content").style.display = "none";
-}
-     let tabs=document.querySelectorAll("aside a");
-     tabs.forEach((e)=>{
-        e.addEventListener("click",(el)=>{
-            console.log(el.target.classList.add('live'))
-            
+        function closeForm() {
+            document.getElementById("content").style.display = "none";
+        }
+        let tabs = document.querySelectorAll("aside a");
+        tabs.forEach((e) => {
+            e.addEventListener("click", (el) => {
+                console.log(el.target.classList.add('live'))
+
+            })
         })
-     })
-</script>
+    </script>
 
-<script src="../assets/js/progress.js">
-</script>
+    <script src="../assets/js/progress.js">
+    </script>
 
 
 
 
     <script src="../assets/js/params.js"></script>
- <script src="../assets/js/tawk.js"></script>
+    <script src="../assets/js/tawk.js"></script>
 </body>
 
 </html>
