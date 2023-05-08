@@ -235,8 +235,8 @@ chat.submit = () => {
 // prompt for API key if not found in localStorage
 window.onload = () => {
  //chat.apiKey = localStorage.getItem('OPENAI_API_KEY');
-//   chat.apiKey = 'sk-cfw9UshZFRZflMOW78P2wKMiIzi32IoGCGaxMTgOsZmrn8OG'
-chat.apiKey='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';
+  chat.apiKey = 'sk-cfw9UshZFRZflMOW78P2wKMiIzi32IoGCGaxMTgOsZmrn8OG'
+// chat.apiKey='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';
  chat.endPoint = 'https://chat.pingshan.uk/v1/chat/completions';
 // chat.endPoint='https://api.openai.com/v1/chat/completions';
  

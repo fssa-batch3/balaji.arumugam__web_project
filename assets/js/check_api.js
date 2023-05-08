@@ -15,35 +15,81 @@
 // 	console.error(error);
 // }
 
+// const axios = require('axios');
 
-
-function getUsers() {
-    fetch("axios")
-      .then((results) => {
-        return results.json();
-      })
-      .then((data) => {
-        console.log(data);
-        // return data;
-        // Access your data here
-      });
-  }
-getUsers();
-
-// const data = null;
-// var XMLHttpRequest = require('xhr2');
-//  var xhr = new XMLHttpRequest();
-// xhr.open('GET', 'https://api.sandbox.co.in/bank/CNRB0000973');
-// xhr.setRequestHeader('accept', 'application/json');
-// xhr.setRequestHeader('x-api-version', '1.0');
-// xhr.onreadystatechange = () => {
-//     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-//       console.log(xhr.response)
-//     }
+// let response = null;
+// new Promise(async (resolve, reject) => {
+//   try {
+//     response = await axios.get('https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
+//       headers: {
+//         'X-CMC_PRO_API_KEY': 'b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c',
+//       },
+//     });
+//   } catch(ex) {
+//     response = null;
+//     // error
+//     console.log(ex);
+//     reject(ex);
 //   }
-// xhr.send(data);
+//   if (response) {
+//     // success
+//     const json = response.data;
+//     console.log(json);
+//     resolve(json);
+//   }
+// });
+
+
+// function getUsers() {
+//     fetch("axios")
+//       .then((results) => {
+//         return results.json();
+//       })
+//       .then((data) => {
+//         console.log(data);
+//         // return data;
+//         // Access your data here
+//       });
+//     const url = 'https://lexper.p.rapidapi.com/v1.1/card?url=https%3A%2F%2Fthenextweb.com%2Fnews%2Fpixel-6-teaser&js_timeout=30';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '0936ccdcb4msh5b6ef4889dd3c12p152ea8jsn1bade0549ed2',
+// 		'X-RapidAPI-Host': 'lexper.p.rapidapi.com'
+// 	}
+// };
+
+// fetch(url,options)
+//       .then((results) => {
+//         return results.json();
+//       })
+//       .then((data) => {
+//         console.log(data);
+//         // return data;
+//         // Access your data here
+//       });
+//   }
+// getUsers();
 
 
 
+// let xhrReq = new XMLHttpRequest();
 
+// xhrReq.onload = function() {
 
+//   let resJS0N =JSON.parse(xhrReq.response); 
+//   console.log(resJS0N);
+  
+//   } ;
+  
+//   xhrReq.open("get", "https://api.sandbox.co.in/bank/CNRB0000973", true); 
+//   xhrReq.send();
+$.ajax({
+
+  url: 'https://api.sandbox.co.in/bank/CNRB0000973',
+   method: 'GET',
+  success: function(data){{
+    console.log(data);
+  }}
+
+}) ;
