@@ -1,43 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/courses.css">
-    <title>Courses</title>
+    <title>Tech News</title>
 </head>
-
 <body>
-    <!-- header starts here -->
-    <nav id="navbar">
-        <div class="logo">
-            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
-            <h1>BitWise</h1>
-        </div>
-        <div class="links">
-            <a href="Bag.html"><img alt="image not found" href=""
-                    src="../assets/images/home/bag-removebg-preview.png"></a>
-            <a class="home" href="../index.html">Home</a>
-            <a class="home" href="cert_courses.html">Get Certified</a>
-            <a class="home" href="profile.html">Profile</a>
-        </div>
-    </nav>
-    <div class="notify">
-        <p>Hi,there!!<br>
-           Hurrah!Continue learning..<br>
-        </p>
-        <img src="../assets/images/home/hand.gif" alt="image not found">
-        <img class="exit" src="../assets/images/home/exit-removebg-preview.png" alt="image not found">
-    </div>
-    <!-- Courses Section starts here -->
     <section class="course-page">
-        <h1>Learn Something new!!</h1>
-        <div class="search">
-            <input id="search" type="search" placeholder="Search for courses,Topics,....">
-            <button>Search</button>
-        </div>
+
         <div class="courses">
             <div class="course1-content">
                 <a href="thingsYouSIntro.html"><img alt="image not found" src="../assets/images/home/tSK.jpg"></a>
@@ -81,33 +53,17 @@
             </div>
         </div>
     </section>
-    <!-- footer starts here -->
-    <footer>
-        <div class="logo">
-            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
-            <h1 class="heading">BitWise</h1>
-        </div>
-        <div class="footer-1">
-            <div class="career">
-                <h1>Careers</h1>
-                <p>Want to work for Bitwise?</p>
-                <button>Apply</button>
-            </div>
-            <div class="feedback">
-                <h1>Feedback</h1>
-                <input type="text" placeholder="Enter email">
-                <input type="text" placeholder="Enter message">
-                <button>Submit</button>
-            </div>
-            <div class="contact">
-                <h1>Get in touch</h1>
-                <img alt="image not found" src="../assets/images/home/facebook.png">
-                <img alt="image not found" src="../assets/images/home/twitter.png">
-                <img alt="image not found" src="../assets/images/home/linkedin.png">
-            </div>
-        </div>
-    </footer>
-    <script src="../assets/js/search.js"></script>
-</body>
 
+    <script>
+        let xhrReq = new XMLHttpRequest();
+xhrReq.onload = function() {
+let resJS0N =JSON.parse(xhrReq.response);
+ console.log(resJS0N["articles"]);
+// resJS0N["articles"].sort();
+console.log(resJS0N["articles"].sort());
+};
+xhrReq.open("get", "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=df359e36645d44cd9d7fa0a4020e8fda", true);
+xhrReq.send();
+    </script>
+</body>
 </html>
