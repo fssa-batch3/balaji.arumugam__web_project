@@ -20,6 +20,8 @@
             <a href="Bag.html"><img alt="image not found" href=""
                     src="../assets/images/home/bag-removebg-preview.png"></a>
             <a class="home" href="../index.html">Home</a>
+            <a class="home" href="cert_courses.html">Get Certified</a>
+            <a class="home" href="profile.html">Profile</a>
         </div>
     </nav>
     <div class="notify">
@@ -52,11 +54,11 @@
                     only the best.</p>
                 <a href="WebIntro.html"><button>Start learning</button></a>
             </div>
-            <div style="opacity: 0.4;" class="course1-content">
+            <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/java-prog.jpg">
                 <h2>Java for Programmers</h2>
                 <p>Take advantage of our easy set up and code editor to develop your skills.</p>
-                <button>Start learning</button>
+                <a href="java_intro.html"><button>Start learning</button></a>
             </div>
 
             <div class="course1-content">
@@ -105,33 +107,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        let search=document.getElementById("search");
-        search.addEventListener("keyup",(e)=>{
-            // console.log(e.target.value.toLowerCase())
-            let word=e.target.value.toLowerCase();
-            let course=document.querySelectorAll(".course1-content");
-
-            // console.log(course[1])
-            course.forEach(element => {
-                // console.log(element)
-                let content=element.children[1].textContent.toLowerCase();
-                // console.log(element.children[1].textContent)
-                if(content.includes(word)){
-                    // console.log("matched");
-                    element.style.display="block";
-                }
-                else{
-                    // console.log("none")
-                    element.style.display="none";
-                }
-                
-            });
-
-
-        })
-        
-    </script>
+    <script src="../assets/js/search.js"></script>
 </body>
 
 </html>

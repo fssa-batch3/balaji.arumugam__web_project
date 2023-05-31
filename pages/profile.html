@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,12 +20,12 @@
             <h1>BitWise</h1>
         </div>
         <div class="links">
-            <a href="../index.html">Home</a>
-            <a href="SignUp.html">Sign Up</a>
+            <a href="courses.html">Courses</a>
+            <!-- <a href="SignUp.html">Sign Up</a> -->
         </div>
     </nav>
 
-    <div>
+    <!-- <div>
         <div class="left">
         
         </div>
@@ -36,8 +38,50 @@
             <button id="save">Save</button>
             <button id="delete">Delete</button>
         </div>
-    </div>
+    </div> -->
 
+    <form>
+        <div profile_form class="form-row">
+          <div class="col-md-6">
+            <label for="first_name">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="First name">
+          </div>
+          <!-- <div class="col-md-6">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" class="form-control" placeholder="Last name">
+          </div>
+          <div class="col-md-6">
+            <label for="first_name">profile image</label>
+            <input type="file" class="form-control" placeholder="profile image">
+          </div> -->
+          <div class="col-md-6">
+            <label for="last_name" >email</label>
+            <input type="email" id="email" class="form-control" placeholder="email" disabled>
+          </div>
+          <!-- <div class="col-md-6">
+            <label for="first_name">Address</Address></label>
+            <input type="text" id="address" class="form-control" placeholder="address">
+          </div>
+          <div class="col-md-6">
+            <label for="last_name">Telephone no.</label>
+            <input type="text" class="form-control" placeholder="Telephone no.">
+          </div>
+          <div class="col-md-6">
+            <label for="last_name">Date of Birth</label>
+            <input type="date" class="form-control" placeholder="mm--dd--yy">
+          </div> -->
+          <!-- <div class="col-md-6">
+            <label for="last_name">facebook link</label>
+            <input type="text" class="form-control" placeholder="paste your url">
+          </div> -->
+          <!-- <button class="button_form " id="save_change_button">Save changes</button>
+          <button class="button_form " id="del_button">Delete</button>
+          <a href=""></a> -->
+          <button id="edit">Edit</button>
+            <button id="save">Save</button>
+            <button id="delete">Delete</button>
+        </div>
+      </form>
 
     <script>
 
@@ -63,13 +107,16 @@
             alert("error")
         }
         document.getElementById("edit").addEventListener("click", (e) => {
+          e.preventDefault();
             // name.removeAttribute("disabled", "")
             email.removeAttribute("disabled", "")
         })
         document.getElementById("save").addEventListener("click", (e) => {
+          e.preventDefault();
             update();
         })
         document.getElementById("delete").addEventListener("click", (e) => {
+          e.preventDefault();
             // console.log(res)
             // res["email"]="";
             // res["user_name"]="";//1st
@@ -77,8 +124,8 @@
             let num=arr.indexOf(res);//0s
             // console.log()
             // res="";
-            // arr.splice(num,1) //3rd splice (1,1,replacement) //0,1,2,"2":"balaji"
-            delete arr[num];// arr["0"]2nd
+            arr.splice(num,1) //3rd splice (1,1,replacement) //0,1,2,"2":"balaji"
+            // delete arr[num];// arr["0"]
             // console.log(arr)
 
             localStorage.setItem("arr", JSON.stringify(arr))

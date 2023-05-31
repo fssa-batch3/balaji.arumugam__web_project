@@ -72,6 +72,19 @@
         let comment_sec=document.getElementById("comments");
         let btns=document.getElementById("btn");
         let inputs=document.getElementById("comment");
+        let arr =JSON.parse(localStorage.getItem("comments"));
+
+        let com=document.createElement("p");
+            // for(let i=0;i<=arr.length;i++){
+                arr.forEach(e=> {
+                    
+                
+                console.log(e["comment"])
+                com.innerText=e["comment"]+"    "+"Commented on -->"+e["date"]+e["time"]
+                console.log(com);
+                comment_sec.append(com)
+            });
+            // }
         btns.addEventListener("click",(e)=>{
             // console.log("clicked")
             if(inputs.value==""){
@@ -80,10 +93,22 @@
             }
             else{
             let date=new Date().toLocaleDateString();
+            console.log(date)
             let time=new Date().toLocaleTimeString();
-            let com=document.createElement("p");
-            com.innerText=inputs.value +"   "+ "Commented on-->"+ date + time;
-            comment_sec.append(com)
+            let user_comment = {
+                "comment": inputs.value,
+                "date": date,
+                "time": time
+            }
+            let arr = localStorage.getItem("comments") ? JSON.parse(localStorage.getItem("comments")) : [];
+            arr.push(user_comment)
+            localStorage.setItem("comments", JSON.stringify(arr))
+
+           
+            // com.innerText=inputs.value +"   "+ "Commented on-->"+ date + time;
+            
+            
+
             inputs.value="";
         }
             

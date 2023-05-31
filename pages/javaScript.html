@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+
+    <link rel="stylesheet" href="../assets/css/gpt.css">
+    <script src="../assets/js/gpt.js"></script>
+    <!-- <link rel="stylesheet" href="../lib/css/editor-styles.css"> -->
     <title>JavaScript</title>
 </head>
 
@@ -18,16 +22,19 @@
             <h1>BitWise</h1>
         </div>
         <div class="links">
+            <!-- <a href="Bag.html"><img alt="image not found" href=""
+                src="../assets/images/home/bag-removebg-preview.png"></a> -->
             <a href="../index.html">Home</a>
             <a href="courses.html">Back to courses</a>
             <a href="WebDev.html">Back to modules</a>
             <a href="FrontEnd.html">Next module</a>
             <a href="JS-2.html">Next Page</a>
+            <a class="home" href="cert_courses.html">Get Certified</a>
         </div>
     </nav>
     <!-- aside bar starts here -->
     <aside>
-        <a href="#JS">What is JavaScript?</a>
+        <a href="#JS" class="live">What is JavaScript?</a>
         <a href="#DOM">Understanding the DOM</a>
         <a href="#variable">Creating a Variable</a>
         <a href="#datatype">Datatype</a>
@@ -40,8 +47,23 @@
         <a href="#string">Strings</a>
 
     </aside>
+    <div id="chat">
+        <button class="open-button" onclick="openForm()">Tech Assistant</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 300px;"></textarea>
+                <div id="list" style="height:300px;width:300px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+
+    </div>
     <!-- Article starts here -->
-    <div class="body-container">
+    <div data-id="Web" class="body-container">
+        <div data-id="JS" class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
         <div id="JS" style="line-height:50px ;">
             <h1>What is JavaScript?</h1>
             <p>Javascript is the programming language of the web. So far, we have used HTML to structure the content of
@@ -72,10 +94,13 @@
             <p>Your JavaScript link should be in end of the body tag on HTML.So that, It will wait to perform function
                 after getting inputs from the User or command from the user.</p>
             <img src="../assets/images/JavaScript/hello.PNG" width="900px">
+
+
             <h1>Practice here(In Code Editor)</h1>
             <!-- Code Editor starts here -->
-            <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
-            </iframe><br><br>
+            <!-- <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
+            </iframe><br><br> -->
+            <a><button data-id="1">Try it in Code Editor</button></a>
             <p>Let’s dig in deeper and examine the first line in our code:</p>
             <h2>var button = document.querySelector('button');</h2>
             <p>
@@ -132,8 +157,8 @@
             </p>
             <p>As long as we follow these rules, we can name a variable whatever we like. The following are valid
                 JavaScript variable names.</p>
-               <p>Feel free to run this code and try out different variable names.</p> 
-               <img src="../assets/images/JavaScript/variable.PNG" alt="image not found" width="900px">
+            <p>Feel free to run this code and try out different variable names.</p>
+            <img src="../assets/images/JavaScript/variable.PNG" alt="image not found" width="900px">
         </div>
         <div id="datatype">
             <h1>Javascript data types</h1>
@@ -227,8 +252,9 @@
             </p>
             <!-- Code Editor starts here -->
             <h1>Practice here</h1>
-            <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
-            </iframe><br><br>
+            <!-- <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600"> -->
+            <!-- </iframe><br><br> -->
+            <a><button data-id="2">Try it in Code Editor</button></a>
             <h1 id="modulo">4.The Modulo Operator</h1>
             <p>The modulo operator,%, can be used to find the remainder of a division operation between two integer
                 values.</p>
@@ -246,36 +272,46 @@
                 var num = 10;<br>
             <p>
                 <span>
+                    <code>
                     // add 10 to the number<br>
                     num = num + 10;<br>
                     console.log("Add 10:", num);<br>
+                </code>
                 </span>
             </p>
             <p>
                 <span>
+                    <code>
                     // subtract 5 from the number<br>
                     num = num - 5;<br>
                     console.log("Subtract 5:", num);<br>
+                </code>
                 </span>
             </p>
             <p>
                 <span>
+                    <code>
                     // multiply the number by 7<br>
                     num = num * 7;<br>
                     console.log("Multiply by 7:", num);<br>
+                </code>
                 </span>
             </p>
             <p>
                 <span>
+                    <code>
                     // divide the number by 5<br>
                     num = num / 5;<br>
                     console.log("Divide by 5:", num);<br>
+                </code>
                 </span>
             </p>
             </p>
             <p>You can simplify the above code by using +=, -=, *=, and /= shorthand operators to increase or decrease a
                 number’s value, like this</p>
             <img src="../assets/images/JavaScript/number_uneray.PNG" width="900px">
+            <br>
+            <a><button data-id="3">Try it in Code Editor</button></a>
             <p>
                 These operations are often times referred to as incrementing or decrementing a value:<br>
 
@@ -287,6 +323,8 @@
             <h1 id="Unary">6.++ and -- Operators(Uneray Operator)</h1>
             <p>There are many instances where you will want to increment or decrement a value by one.</p>
             <img src="../assets/images/JavaScript/num_uneray.PNG" alt="image not found" width="900px">
+            <br>
+            <a><button data-id="4">Try it in Code Editor</button></a>
             <p>In this case, you can use the ++ and -- operators as a further shorthand:</p>
             <img src="../assets/images/JavaScript/num_unery.PNG" alt="image not found" width="900px">
             <p>Now that you have learned about Numbers in javascript, let’s learn about Strings:)</p>
@@ -338,6 +376,31 @@
         </div>
 
     </div>
+    <script>
+        function openForm() {
+            document.getElementById("content").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("content").style.display = "none";
+        }
+        let tabs = document.querySelectorAll("aside a");
+        tabs.forEach((e) => {
+            e.addEventListener("click", (el) => {
+                console.log(el.target.classList.add('live'))
+
+            })
+        })
+    </script>
+
+    <script src="../assets/js/progress.js">
+    </script>
+
+
+
+
+    <script src="../assets/js/params.js"></script>
+    <script src="../assets/js/tawk.js"></script>
 </body>
 
 </html>

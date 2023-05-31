@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/courses.css">
+    <title>Tech News</title>
+</head>
+<body>
+    <section class="course-page">
+
+        <div class="courses">
+            <div class="course1-content">
+                <a href="thingsYouSIntro.html"><img alt="image not found" src="../assets/images/home/tSK.jpg"></a>
+                <h2>Things that you should know</h2>
+                <p>Basic Things that need for<br> developers
+                    , our team cover it all.</p>
+                <a href="thingsYouSIntro.html"><button>Start learning</button></a>
+            </div>
+            <div class="course1-content">
+                <a href="WebIntro.html"><img alt="image not found" src="../assets/images/home/prog2.jpg"></a>
+                <h2>Web development</h2>
+                <p>Our team go through a strict <br>
+                    application and vetting process, leaving <br>
+                    only the best.</p>
+                <a href="WebIntro.html"><button>Start learning</button></a>
+            </div>
+            <div class="course1-content">
+                <img alt="image not found" src="../assets/images/home/java-prog.jpg">
+                <h2>Java for Programmers</h2>
+                <p>Take advantage of our easy set up and code editor to develop your skills.</p>
+                <a href="java_intro.html"><button>Start learning</button></a>
+            </div>
+
+            <div class="course1-content">
+                <a href="BOPCouse-intro.html"><img alt="image not found" src="../assets/images/home/prog.jpg"></a>
+                <h2>Basics of Programming</h2>
+                <p>Take advantage of our easy set up and code editor to develop your skills.</p>
+                <a href="BOPCouse-intro.html"><button>Start learning</button></a>
+            </div>
+            <div class="course1-content">
+                <img alt="image not found" src="../assets/images/home/DSA.jpg">
+                <h2>Data Structures and algorithms</h2>
+                <p>Take advantage of our easy set up and code editor to develop your skills.</p>
+                <a href="DSAintro.html"><button>Start learning</button></a>
+            </div>
+            <div style="opacity: 0.4;" class="course1-content">
+                <img alt="image not found" src="../assets/images/home/server.webp">
+                <h2>distributed Systems</h2>
+                <p>Take advantage of our easy set up and code editor to develop your skills.</p>
+                <button>Start learning</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let xhrReq = new XMLHttpRequest();
+xhrReq.onload = function() {
+let resJS0N =JSON.parse(xhrReq.response);
+ console.log(resJS0N["articles"]);
+// resJS0N["articles"].sort();
+console.log(resJS0N["articles"].sort());
+};
+xhrReq.open("get", "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=df359e36645d44cd9d7fa0a4020e8fda", true);
+xhrReq.send();
+    </script>
+</body>
+</html>

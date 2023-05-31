@@ -7,7 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
-    <title>JavaScript</title>
+    <link rel="stylesheet" href="../lib/css/editor-styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="../assets/css/gpt.css"> -->
+    <!-- <script src="../assets/js/gpt.js"></script> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+    <title>Code Editor</title>
 </head>
 
 <body>
@@ -23,10 +28,11 @@
             <a href="WebDev.html">Back to modules</a>
             <a href="FrontEnd.html">Next module</a>
             <a href="FrontEnd.html">Next Page</a>
+            <a class="home" href="cert_courses.html">Get Certified</a>
         </div>
     </nav>
     <!-- aside bar starts here -->
-    <aside>
+    <!-- <aside>
         <a href="#boolean">What is Boolean?</a>
         <a href="#undefined">Undefined</a>
         <a href="#null">Null</a>
@@ -36,33 +42,96 @@
         <a href="#why-function">Why Function</a>
         <a href="#task1">Task 1-Function</a>
         <a href="#conditions">If-Condition</a>
-    </aside>
-    <!-- Article starts here -->
+    </aside> -->
+    <!-- Article starts here4 -->
     <div class="body-container">
-        <textarea id="html"></textarea>
-        <textarea id="css"></textarea>
-        <textarea id="js"></textarea>
+        <div>
+            <h4>HTML Editor:</h4>
+            <textarea id="html"></textarea>
+            <h4>CSS Editor:</h4>
+            <textarea id="css"></textarea>
+            <h4>JS Editor:</h4>
+            <textarea id="js"></textarea>
+        </div>
+        <h4>Output:</h4>
         <iframe id="output_window"></iframe>
+    </div>
+    <!-- <div id="chat">
+        <button class="open-button"onclick="openForm()">Chat</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                Tech Assistant:
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 200px;"></textarea>
+                <div id="list" style="height:300px;width:200px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+        
+    </div> -->
 
     </div>
+    <div class="editor">
+        <div class="editor__wrapper">
+            <div class="editor__body">
+                <div id="editorCode" class="editor__code"></div>
+            </div>
+            <div class="editor__footer">
+                <div class="editor__footer--left">
+                    <button class="editor__btn editor__run">Run ></button>
+                    <button class="editor__btn editor__reset">Reset ></button>
+                </div>
+                <!-- <div class="editor__footer--right">
+                    <div class="editor__console">
+                        <ul class="editor__console-logs"></ul>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
     <script>
-       
-        
+        function openForm() {
+  document.getElementById("content").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("content").style.display = "none";
+}
+        let html_div = document.getElementById("html");
+        let css_div = document.getElementById("css");
+        let js_div = document.getElementById("js");
+        let codes = localStorage.getItem("Editor_code") ? JSON.parse(localStorage.getItem("Editor_code")) : {};;
+        // console.log(codes["html"])
+        html_div.value = codes["html"];
+        css_div.value = codes["css"]
+        js_div.value = codes["js"]
 
         function check() {
-            let html_div = document.getElementById("html").value;
-        let css_div = document.getElementById("css").value;
-        let js_div = document.getElementById("js").value;
-        let output = document.getElementById("output_window");
-            output.contentDocument.body.innerHTML = html_div + "<style>" + css_div + "</style>";
-            // output.contentWindow = eval(js_div);
+
+            let code = {
+                "html": html_div.value,
+                "css": css_div.value,
+                "js": js_div.value
+            }
+            localStorage.setItem("Editor_code", JSON.stringify(code))
 
 
-
+            let output = document.getElementById("output_window");
+            output.contentDocument.body.innerHTML = html_div.value + "<style>" + css_div.value + "</style>";
+            output.contentWindow.eval(js_div.value);
 
         }
+        document.getElementById("html").addEventListener("keyup", check)
+        document.getElementById("css").addEventListener("keyup", check)
+        document.getElementById("js").addEventListener("keyup", check)
 
     </script>
+    <script src="../lib/js/ace-editor/src-min/ace.js"></script>
+    <script src="../lib/js/ace-editor/src-min/mode-javascript.js"></script>
+    <script src="../lib/js/ace-editor/src-min/ext-language_tools.js"></script>
+    <script src="../lib/js/editor.js"></script>
+    <script src="../assets/js/tawk.js"></script>
 </body>
 
 

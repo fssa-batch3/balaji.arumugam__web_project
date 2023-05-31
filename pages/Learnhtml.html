@@ -22,6 +22,7 @@
             <a href="courses.html">Back to courses</a>
             <a href="WebDev.html">Back to modules</a>
             <a href="css.html">Next module</a>
+            <a class="home" href="cert_courses.html">Get Certified</a>
         </div>
     </nav>
     <!-- aside bar starts here -->
@@ -33,7 +34,13 @@
         <a href="#video">Video Explanation</a>
     </aside>
     <!-- Article starts here -->
-    <div class="body-container">
+
+    <div data-id="Web" class="body-container">
+        <!-- <div class="header"> -->
+            <div data-id="html" class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        <!-- </div> -->
         <div id="html-intro">
             <h1>What is HTML?</h1>
             <p>Hyper Text MarkUp Language.</p>
@@ -59,11 +66,12 @@
                 headings, paragraphs, images, hyperlinks, tables, lists, etc.<br>
                 HTML is not a programming language, it is a markup language which is used for describing webpages, A
                 markup language is a set of markup tags, and HTML uses these markup tags to give elements to the web
-            HTML tags are always surrounded by angle brackets(<>)<br>
+                HTML tags are always surrounded by angle brackets(<>)<br>
                     some tags require a closing tag as well some are self-closing tags, they do not require any
                     closing tags for them. Examples of tags which needs a closing tag are HTML ,/HTML or BODY /BODY,
                     they always come in pair, the first tag in a pair is the start tag, the second tag is end tag.<br>
-                    Examples of tags which have closing tags with them are br,img alt="image not found" or b tag etc. Start and end tags are
+                    Examples of tags which have closing tags with them are br,img alt="image not found" or b tag etc.
+                    Start and end tags are
                     also called opening tags and closing tags. </p>
             <h1 id="attribute">Attributes</h1>
             <p>HTML elements can have added attributes as well, they
@@ -77,32 +85,43 @@
 
                 HTML links are defined with the a tag.<br>
 
-                    The link address is provided as an attribute href:<br>
+                The link address is provided as an attribute href:<br>
 
-                    <img alt="image not found" src="../assets/images/home/html-anchor.PNG" height="320px" width="900px"><br>
-                    <h1>Practice here(In Code Editor)</h1>
-                    <!-- Code Editor starts here -->
-                    <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
-                    </iframe><br><br>
+                <img alt="image not found" src="../assets/images/home/html-anchor.PNG" height="320px" width="900px"><br>
+            <h1>Practice here(In Code Editor)</h1>
+            <!-- Code Editor starts here -->
+            <iframe title="HTML editor" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600">
+            </iframe><br><br>
 
-                    <p>Most of the times we want to have some characters displayed as it is on the web page but they get
-                    different meaning when we write them in code or sometimes, they get ignored as well. To solve this
-                    problem HTML includes some special entities which makes it easier to display character</p><br>
-                    <img alt="image not found" src="../assets/images/home/html-chars.PNG" height="320px" width="900px">
-                    <h1>Practice here(In Code Editor)</h1>
-                    <!-- Code Editor starts here -->
-                    <iframe title="HTML editor-2" src="https://www.programiz.com/html/online-compiler/" width="90%" height="600"></iframe>
-                    <p>We will dive deep into HTML later</p>
+            <p>Most of the times we want to have some characters displayed as it is on the web page but they get
+                different meaning when we write them in code or sometimes, they get ignored as well. To solve this
+                problem HTML includes some special entities which makes it easier to display character</p><br>
+            <img alt="image not found" src="../assets/images/home/html-chars.PNG" height="320px" width="900px">
+            <h1>Practice here(In Code Editor)</h1>
+            <!-- Code Editor starts here -->
+            <iframe title="HTML editor-2" src="https://www.programiz.com/html/online-compiler/" width="90%"
+                height="600"></iframe>
+            <p>We will dive deep into HTML later</p>
             </p>
         </div>
         <!-- Video Explanation starts here -->
         <div id="video">
             <h1>Video Explanation(In Tamil)</h1>
-            <iframe title="Tamil video" width="560" height="315" src="https://www.youtube.com/embed/Oes56FoYABc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+            <iframe title="Tamil video" width="560" height="315" src="https://www.youtube.com/embed/Oes56FoYABc"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe><br>
             <h1>Video Explanation(In English)</h1>
-            <iframe title="English video" width="560" height="315" src="https://www.youtube.com/embed/qz0aGYrrlhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="English video" width="560" height="315" src="https://www.youtube.com/embed/qz0aGYrrlhU"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
     </div>
+
+    <script src="../assets/js/progress.js">
+    </script>
+    <script src="../assets/js/tawk.js"></script>
 </body>
 
 </html>

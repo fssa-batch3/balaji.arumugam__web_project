@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <link rel="stylesheet" href="../assets/css/gpt.css">
+    <script src="../assets/js/gpt.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../assets/js/check_api.js"></script>
+    <title>Hyper Text Mark Up Language</title>
+</head>
+
+<body>
+    <!--Header starts here -->
+    <nav id="navbar">
+        <div class="logo">
+            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
+            <h1>BitWise</h1>
+        </div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="courses.html">Back to courses</a>
+            <a href="WebDev.html">Back to modules</a>
+            <a href="css.html">Next module</a>
+            <a class="home" href="cert_courses.html">Get Certified</a>
+        </div>
+    </nav>
+    <!-- aside bar starts here -->
+    <aside>
+        <a href="#api-intro">What is API?</a>
+        <a href="#benefits">Benefits Of Using API</a>
+        <a href="#http">HTTP requests</a>
+        <a href="#ajax">AJAX</a>
+        <a href="#ajaxbenifits">Benifits of AJAX</a>
+        <a href="#ajaxcode">Syntax of AJAX</a>
+    </aside>
+    <!-- Article starts here -->
+    <div id="chat">
+        <button class="open-button" onclick="openForm()">Tech Assistant</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 300px;"></textarea>
+                <div id="list" style="height:300px;width:300px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+
+    </div>
+    <div data-id="Web" class="body-container">
+        <!-- <div class="header"> -->
+        <div data-id="api" class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+        <!-- </div> -->
+        <div id="api-intro">
+            <h1>What is API?</h1>
+            <p>Application Programme Interface.</p>
+            <p>Application Programme Interface abbreviated as API which is a software intermediary that allows two
+                applications to talk to each other.</p>
+            <p>Let's look
+                into an example to go through with this topic,</p>
+            <p>1.If user wants to book train tickets, web application shows the departure time, stations like that all
+                the informations.</p>
+            <p>2.When we look in this from the developer side, developer wants to display all the train schedule
+                informations in the web application, then developer use the APis to get these train informations from
+                the web server where all the train details and informations are stored.</p>
+            <p>3.Then developers can retrieve data from the web server using the APis to display in the web application.
+            </p>
+            <img alt="image not found"
+                src="https://lh4.googleusercontent.com/rKoHyX6rc8aOY19aB45b44tBmOX2eA6A9hCk31YbxI4teiRF79um9Sagx3Zuxu427LVIZFdineD_UQllQMufP36blApzosxJuRryNl8EtWctHTQnNDx5JdKGjJTOBKkIwqOwRbli">
+        </div>
+        <div id="benefits">
+            <h1>Benefits Of Using API</h1>
+            <!-- <img alt="image not found" src="../assets/images/home/html-struc.PNG"> -->
+            <p id="explanation">APis needed to make the connection between application functions to handle the data from
+                predefined processes.</p>
+            <h2>Ease of integration:</h2>
+            <p>APis can be embedded with any type of software application, So it can easily integrate with the
+                applications and functions between different websites</p>
+            <h2 id="attribute">Reduce software development effort:</h2>
+            <p>Using APis reduce development efforts, developers can implement APis of Google Maps to provide the exact
+                store location to website visitors.</p>
+            <h2>Security:</h2>
+            <p>APis provide a secure communication gateway for different app components to interact and exchange data.
+            </p>
+            <h1>How it works?</h1>
+            <p>1.So, an application sends data to a server.<br>
+                2.The server retrieves the data and interprets it. <br>
+                3.Some action is performed on the data.<br>
+                4.The server sends the information back to the application.<br>
+                5.The application interprets the data.<br>
+                6.The application presents the interpreted information in a readable way.</p>
+
+            <p>The communication between the application and the server is all done via API.</p>
+            <p>The exchange of data is mostly done using JSON.</p>
+            <img alt="image not found" src="https://www.astera.com/wp-content/uploads/2020/01/rest.png" height="350px">
+
+        </div>
+        <div>
+            <h3 id="http">HTTP REQUESTS:</h3>
+            <p>HTTP means HyperText Transfer Protocol. It is the underlying protocol used by the World Wide Web that
+                defines how messages are formatted and transmitted.</p>
+            <p>HTTP is a stateless protocol. </p>
+            <p>This means that the server does not require to maintain information or
+                status about every user for the duration of multiple requests.</p>
+            <p>This also means that the server does not
+                need to maintain a continuous connection with the client.</p>
+            <h3>Types of HTTP request:</h3>
+            <p>► GET - requests for a data<br></p>
+
+            <p>► POST - submits data causing a change in state on the server<br></p>
+
+            <p>► PUT - replaces the specified data with request data<br></p>
+
+            <p>► DELETE - deletes the specified data<br></p>
+
+            <p>► HEAD - requests for data but without the response body<br></p>
+
+            <p>► CONNECT - establishes a tunnel to the server<br></p>
+
+            <p>► OPTIONS - describes the communication options for the target data<br></p>
+
+            <p>► TRACE - perform message loop-back test along the path to the target data<br></p>
+
+            <p>► PATCH - apply partial changes to data</p>
+        </div>
+        <div>
+            <p>There are several ways to get the data from an API.</p>
+            <h1 id="ajax">AJAX:</h1>
+            <p>
+                *AJAX stands for Asynchronous JavaScript And XML.<br>
+                *It is about updating a web page without reloading the entire web page.<br>
+                *This is very useful when only some parts of a web page need to be changed.</p>
+            <p>Before learning about asynchronous, let us see what is the meaning of synchronous calls</p>
+            <h3>Synchronous Call</h3>
+            <p>If a synchronous call happens then any further operation on the client gets blocked, i.e. any further
+                execution of operations stop executing until a response is not received. Like in JavaScript or other
+                languages, the statements execute in a sequence.</p>
+            <h3>Asynchronous Call</h3>
+            <p>Asynchronous means that the operations on the client do not get blocked. This means, that the client can
+                work on other things and does not need to wait for the response. Examples of asynchronous calls in
+                JavaScript are - setTimeout(), setlnterval(), etc.</p>
+
+            <p>AJAX is not a programming or a scripting language. It is a group of inter-related technologies
+
+                like JavaScript, XML, HTML, CSS, and DOM</p>
+            <h3 id="ajaxbenifits">Benifits of AJAX:</h3>
+            <p> • Update a web page without reloading the page<br></p>
+
+            <p>• Receive and send data asynchronously<br></p>
+
+            <p>• Send only important data to the server<br></p>
+
+            <p>• Makes the application faster<br></p>
+            <h3 id="ajaxcode">AJAX Request</h3>
+            <p>AJAX communicates asynchronously with the server using the XMLHttpRequest object.</p>
+            <p>To send an HTTP request, create an XMLHttpRequest object, open a URL, and send the request.
+
+                The code below shows an example of AJAX request-</p>
+            <code>let xhrReq = new XMLHttpRequest();<br>
+
+                xhrReq.onload = function() {<br>
+                
+                  let resJS0N =JSON.parse(xhrReq.response); <br>
+                  console.log(resJS0N);<br>
+                  
+                  } ;<br>
+                  
+                  xhrReq.open("get", url, true); <br>
+                  xhrReq.send();
+                </code><br>
+
+            <p>The open() method initializes a newly-created request.<br>
+
+                It has the following syntax - XMLHttpRequest. open (method, url, async, user, password)<br>
+
+                The parameters other than 'method' and 'url' are optional but has to be in the sequence as shown in the
+                syntax above.<br>
+
+                The 'async' option is a boolean parameter defining asynchronous request when true (by default is true)
+                or synchronous request when it is false.<br>
+                onload() function process the response what we receive<br>
+
+                The 'response' property returns the response body content. The 'send()' method sends the request to the
+                server.<br>
+
+                The syntax is - XMLHttpRequest.send()<br>
+
+                The 'body' is an optional parameter which is ignored when the request method is 'GET' or 'HEAD'.<br>
+
+                The constructor function XMLHttpRequest isn't limited to only XML documents.<br>
+                It starts with 'XML'
+                because when it was created the main format that was originally used for Asynchronous Data Exchange was
+                XML, but now JSON is mostly used.</p>
+            <h3>Try this Example:</h3>
+            <a><button data-id="ajax-1">Try it in Code Editor</button></a>
+
+            <h3>AJAX REQUEST USING JQUERY</h3>
+            <p>Writing AJAX code can be a bit tricky because different browsers have different syntax for AJAX
+                implementation.<br>
+                However, using jQuery you can use AJAX functionality with only few lines of code.</p>
+            <p>The jQuery 'ajax()' method sends asynchronous HTTP requests to the server.</p>
+            <h3>Syntax for Jquery ajax:</h3>
+            <code>$.ajax({<br>
+
+                    url: 'example.json',<br>
+                     method: 'GET',<br>
+                    success: function(data){{<br>
+                      console.log(data);<br>
+                    }}<br>
+                  
+                  }) ;</code>
+            <p>
+              url - a string containing the URL to which the request is sent.<br>
+                 The 'url' can be provided as seen in the
+                syntax or there is also a url property in 'settings' as seen in the example.<br>
+                method - the HTTP method to use for the request (e.g. "POST", "GET", "PUT"). <br>
+                data - data to be sent to the server. <br>
+                It can be JSON object, string or array.<br>
+                success - a callback function to be executed when
+                Ajax request succeeds.
+            </p>
+            <h3>Try this Example:</h3>
+            <a><button data-id="ajax-2">Try it in Code Editor</button></a>
+            
+
+        </div>
+        <!-- Video Explanation starts here -->
+        <!-- <div id="video">
+            <h1>Video Explanation(In Tamil)</h1>
+            <iframe title="Tamil video" width="560" height="315" src="https://www.youtube.com/embed/Oes56FoYABc"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe><br>
+            <h1>Video Explanation(In English)</h1>
+            <iframe title="English video" width="560" height="315" src="https://www.youtube.com/embed/qz0aGYrrlhU"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div> -->
+    </div>
+<script>
+    function openForm() {
+            document.getElementById("content").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("content").style.display = "none";
+        }
+</script>
+    <script src="../assets/js/progress.js">
+    </script>
+    <script src="../assets/js/tawk.js"></script>
+    <script src="../assets/js/params.js"></script>
+</body>
+
+</html>

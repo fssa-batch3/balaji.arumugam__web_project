@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <link rel="stylesheet" href="../assets/css/gpt.css">
+    <script src="../assets/js/gpt.js"></script>
     <title>Javascript Next Page</title>
 </head>
 
@@ -23,6 +25,7 @@
             <a href="WebDev.html">Back to modules</a>
             <a href="FrontEnd.html">Next module</a>
             <a href="JS-3.html">Next Page</a>
+            <a class="home" href="cert_courses.html">Get Certified</a>
         </div>
     </nav>
     <!-- aside bar starts here -->
@@ -37,9 +40,25 @@
         <a href="#task1">Task 1-Function</a>
         <a href="#conditions">If-Condition</a>
 
+
     </aside>
     <!-- Article starts here -->
+    <div id="chat">
+        <button class="open-button"onclick="openForm()">Tech Assistant</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 300px;"></textarea>
+                <div id="list" style="height:300px;width:300px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+        
+    </div>
     <div class="body-container">
+        <div data-id="JS" class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
         <div id="boolean">
             <h1>Boolean</h1>
             <p>At its most basic level, a computer is a series of on and off switches, a set of 0s and 1s that flip back
@@ -70,6 +89,8 @@
                             <=< /span><br>
             </p>
             <img src="../assets/images/JavaScript/bool.PNG" alt="image not found" width="900px">
+            <br>
+            <a><button data-id="5">Try it in Code Editor</button></a>
         </div>
         <div id="undefined">
             <h1>Undefined and Null values</h1>
@@ -87,11 +108,14 @@
                 This means you have not assigned an value to the variable.
             </p>
             <img src="../assets/images/JavaScript/undefined.PNG" alt="image not found" width="900px">
+           
             <h1 id="null">Null values</h1>
             <p>Variables with a <span>null type</span>, on the other hand, represent values that are intentionally
                 empty. A <span>null variable</span> can be created by setting the variable equal to <span>null</span>.
             </p>
             <img src="../assets/images/JavaScript/null.PNG" alt="image not found" width="900px">
+            <br>
+            <a><button data-id="6">Try it in Code Editor</button></a>
 
         </div>
         <div id="difference">
@@ -135,6 +159,8 @@
                     var twoPlusTwenty = sum(2, 20);<br>
 
                     console.log(onePlusTwo, twoPlusTwenty);</span></p>
+                    <br>
+                    <a><button data-id="7">Try it in Code Editor</button></a>
             <p>
                 In this example, we make use of two different functions:<br>
                 *the <span>sum()</span> function, where we pass <span>two numbers</span> as arguments<br>
@@ -160,6 +186,19 @@
             </p>            
         </div>
     </div>
+    <script>
+        function openForm() {
+  document.getElementById("content").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("content").style.display = "none";
+}
+    </script>
+    <script src="../assets/js/progress.js">
+    </script>
+    <script src="../assets/js/params.js"></script>
+    <script src="../assets/js/tawk.js"></script>
 </body>
 
 </html>

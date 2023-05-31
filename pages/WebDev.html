@@ -19,6 +19,7 @@
             <a href="../index.html">Home</a>
             <a href="courses.html">Back to courses</a>
             <a href="BOPCouse-intro.html">Next Course</a>
+            <a href="JS-3.html">Editor</a>
         </div>
     </nav>
     <!-- Course Modules starts here -->
@@ -80,10 +81,10 @@
                 <h2>SQL and No-sql</h2>
                 <button>Know more</button>
             </div>
-            <div style="opacity: 0.4;" class="course1-content">
+            <div class="course1-content">
                 <img alt="image not found" src="../assets/images/home/API.jpg">
                 <h2>APIs</h2>
-                <button>Know more</button>
+                <a href="learn_api.html"><button>Know more</button></a>
             </div>
             <div style="opacity: 0.4;" class="course1-content">
                 <img alt="image not found" src="../assets/images/home/Rest API.jpg">
@@ -118,32 +119,7 @@
             </div>
         </div>
       </footer>
-      <script>
-         let search=document.getElementById("search");
-        search.addEventListener("keyup",(e)=>{
-            // console.log(e.target.value.toLowerCase())
-            let word=e.target.value.toLowerCase();
-            let course=document.querySelectorAll(".course1-content");
-
-            // console.log(course[1])
-            course.forEach(element => {
-                // console.log(element)
-                let content=element.children[1].textContent.toLowerCase();
-                // console.log(element.children[1].textContent)
-                if(content.includes(word)){
-                    // console.log("matched");
-                    element.style.display="block";
-                }
-                else{
-                    // console.log("none")
-                    element.style.display="none";
-                }
-                
-            });
-
-
-        })
-        
-      </script>
+      <script src="../assets/js/search.js"></script>
+      <script src="../assets/js/tawk.js"></script>
 </body>
 </html>

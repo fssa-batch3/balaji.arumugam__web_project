@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="ap-section">
+            <button id="testStart" disabled>Start Proctoring</button>
+            <button id="testEnd" disabled>End Proctoring</button>
+            <button id="testReload">Reload</button>
+            <div id="ap-test-report"></div>
+            <div id="proctor-feedback"></div>
+        </div>
+    </body>
+    <link rel="stylesheet" href="https://cdn.autoproctor.co/autoproctor.2.5.min.css" />
+    <script src="https://cdn.autoproctor.co/autoproctor.2.5.min.js"></script>
+    <script>
+        apSettings = {
+            clientId: "gjYfdGJO",
+            testAttemptId: "6357053",
+            hashedTestAttemptId: "469250b3e48d094afa7253c2dda748f0e97534d09114b4a9e3df824c14e5c514",
+            trackingOptions: {
+                audio: true,
+                numHumans: true,
+                tabSwitch: true,
+                photosAtRandom: true,
+                numPhotosAtRandom: 5,
+                captureSwitchedTab: true,
+                preventMultipleScreens: true,
+                testTakerPhoto: true,
+                forceFullScreen: false
+            },
+            restrictConsole: false,
+            testContainerId: "ap-section",
+            evidencePushInterval: 5,
+            domain: "https://www.autoproctor.co",
+            useDummyUser: true
+        };
+        
+        async function init() {
+            try {
+                autoProctorTest = await initAutoProctor(apSettings);
+                performUIActions(); //This function is used internally to change resulting UI. Don't use this for SDK.
+                document.getElementById("testStart").addEventListener("click", () => {
+                    autoProctorTest.start();
+                });
+                document.getElementById("testEnd").addEventListener("click", () => {
+                    autoProctorTest.stop();
+                    $('.developer-options').show();
+                });
+
+                window.addEventListener("apStartTest", () => {
+                    $("#testEnd").prop("disabled", false);
+                    $("#testStart").prop("disabled", true);
+                    $("#ap-test-report").html("Proctoring...");
+                    $('.developer-options').hide();
+
+                });
+
+                window.addEventListener("apStopMonitoring", async (e) => {
+                    let testAttemptLabel = e.detail.testAttemptLabel;
+                    let testReportUrl = "https://www.autoproctor.co" ? "https://www.autoproctor.co" + "/tests/reports/test-attempt-label/" + testAttemptLabel + "?hide_navbar=true" : "/tests/reports/test-attempt-label/" + testAttemptLabel + "?hide_navbar=true";
+                    $("#ap-test-report").html('<p><b>Test Report</b></p><iframe id="test-report-iframe" style="width:100%;margin-top:10px;" importance="high" src='+testReportUrl+' height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>');
+                });
+               
+                document.getElementById("testReload").addEventListener("click", () => {
+                    window.location.reload();
+                });
+            } catch(err) {
+            }
+        }
+
+        function performUIActions() {
+            $("#testStart").prop("disabled", false);
+            $("#ap-dwnl-script-msg").hide();
+        }
+    </script>
+</html>

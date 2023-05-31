@@ -27,24 +27,37 @@
         <div class="SignUp">
             <h1>Sign Up</h1>
             <p>Create your Bitwise Account</p>
-            <form onsubmit="signup()">
-                <label>Firstname</label>
-                <input type="text" placeholder="Username" id="name" required>
+            <form>
+                <label>Username</label>
+                <input type="text" placeholder="Username" id="name" pattern="[A-Za-z]{0,32}" required>
                 <label>Email</label>
                 <input type="email" placeholder="xyz@gmail.com" id="mail" required>
                 <label>Set Password</label>
-                <input type="password" placeholder="Password" id="pass" required>
+                <input type="password" placeholder="Password" id="pass"
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Uppercase letters: A-Z.
+              Lowercase letters: a-z.
+              . Special: !@#$%^&*()" required>
                 <label>Confirm Password</label>
-                <input type="password" placeholder="Confirm Password" id="password" required>
+                <input type="password" placeholder="Confirm Password" id="password"
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Uppercase letters: A-Z.
+              Lowercase letters: a-z.
+              . Special: !@#$%^&*()" required>
                 <button>Create Account</button>
             </form>
         </div>
     </div>
     <script>
+        let form_signup = document.querySelector("form");
+        form_signup.addEventListener("submit", (e) => {
+            e.preventDefault();
+            signup();
+        })
         function signup() {
-            let username = document.getElementById("name").value;
-            let email = document.getElementById("mail").value;
-            let pass = document.getElementById("password").value;
+            let username = document.getElementById("name").value.trim();
+            let email = document.getElementById("mail").value.trim();
+            let password = document.getElementById("pass").value.trim();
+            let pass = document.getElementById("password").value.trim();
+            if(password==pass){
 
             let user_data = {
                 "user_name": username,
@@ -53,7 +66,12 @@
             }
             let arr = localStorage.getItem("arr") ? JSON.parse(localStorage.getItem("arr")) : [];
             arr.push(user_data)
-            localStorage.setItem("arr", JSON.stringify(arr))
+            localStorage.setItem("arr", JSON.stringify(arr));
+            window.location.href = "login.html";
+        }
+        else{
+            alert("Password and Confirm Password doesn't match")
+        }
         }
     </script>
 </body>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/BasicsOfP.css">
+    <link rel="stylesheet" href="../assets/css/gpt.css">
+    <script src="../assets/js/gpt.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../assets/js/check_api.js"></script>
+    <title>Java</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <img alt="image not found" src="../assets/images/home/logo4-removebg-preview.png">
+            <h1>BitWise</h1>
+        </div>
+        <div class="links">
+            <!-- <a href="Bag.html"><img alt="image not found" href=""
+                src="../assets/images/home/bag-removebg-preview.png"></a> -->
+            <a href="../index.html">Home</a>
+            <a href="courses.html">Back to courses</a>
+            <a href="WebDev.html">Back to modules</a>
+            <a href="FrontEnd.html">Next module</a>
+            <a href="JS-2.html">Next Page</a>
+            <a class="home" href="cert_courses.html">Get Certified</a>
+        </div>
+    </nav>
+    <!-- aside bar starts here -->
+    <aside>
+        <a href="#JS" class="live">Intro to Programming</a>
+        <a href="#DOM">Memory management</a>
+        <a href="#variable">What is Java</a>
+        <a href="#datatype">Java Architecture</a>
+        <a href="#numbers">JRE, JDK and JVM</a>
+        <a href="#comment">Memory management</a>
+        <a href="#multi">Stack & heap</a>
+        <a href="#modulo">Operators</a>
+        <a href="#increment">Type casting</a>
+        <a href="#unary"></a>
+        <a href="#string">Strings</a>
+
+    </aside>
+    <div id="chat">
+        <button class="open-button" onclick="openForm()">Tech Assistant</button>
+        <div id="content" style="margin-bottom:-160px;color:#112;background:bed;display:none;">
+            <div id="right">
+                <textarea id=prompt rows=3 placeholder="please input prompt here.." style="width: 300px;"></textarea>
+                <div id="list" style="height:300px;width:300px">
+                </div>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+
+    </div>
+    <div data-id="Java" class="body-container">
+        <div data-id="java" class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+        <div id="Java" style="line-height:50px ;">
+            <h1>Intro to Programming</h1>
+            <p>
+                Programming is a way to instruct the computer to perform various task.
+            </p>
+            <p>
+                Computers only understands Binary i.e., 0’s and 1’s.
+            </p>
+            <p>
+                Instructing computers in Binary i.e. 0’s and 1’s are very difficult for humans so,
+                to solve this issue we have programming languages
+            </p>
+            <h2>Programming language:</h2>
+            <p>It is a computer language used by programmers
+                to communicate with computers.
+            </p>
+            <img alt="image not found" src="../assets/images/Java/Intro.PNG">
+
+            <h2>Procedural</h2>
+            <p>
+                * Specifies a series of well-structured steps and procedures to compose a
+                program<br>
+                * Contains a systematic order of statements functions and commands to
+                complete a task
+            </p>
+            <h2>Functional</h2>
+            <p>
+                *Writing a program only in pure functions i.e., never modify variables but
+                only create new ones as an output.<br>
+                *Used in a situation where we have to perform lots of different
+                operations on the same set of data like ML.
+            </p>
+            <h2>Object Oriented </h2>
+            <p>
+                *Revolves around objects.<br>
+                *Code + Data = objects<br>
+                *Developed to make it easier to develop, debug, reuse and maintain
+                software
+
+                "One programming language can be of all 3 types like- Python"<br>
+            <p>Java Follows procedural and object oriented both types .
+            </p>
+            </p>
+            <h2>Static VS Dynamic Languages</h2>
+            <h2>Static Language</h2>
+            <p>
+                *Perform type checking at compile time<br>
+                *Errors will show at compile time<br>
+                *Declare datatypes before use. Ex:In Java int a=10. Here, you are declaring the variable 'a' as
+                integer<br>
+                *More control
+            </p>
+            <h2>Dynamic Language</h2>
+            <p>
+                *Perform type checking at runtime<br>
+                *Error might not show till programs run<br>
+                *No need to declare datatype of
+                variables. Ex : In javaScript let a=10.Here, you are not declaring the variable 'a' as integer.But it
+                will considered as integer based on the value that you given after '='<br>
+                *Saves time in writing code but might
+                give error at runtime.
+            </p>
+            <h2>Memory Management</h2>
+            <p>There are 2 types of memory</p>
+            <p>Stack & Heap memory
+            </p>
+            <h3>Stack</h3>
+            <p>
+                * Stack is an data Structure which stores the functions and reference variable one by one.<br>
+            </p>
+            
+
+        </div>
+        <div>
+            <h2>Why do we use Programming language?</h2>
+            <p>
+                Machine only understand 0’s and 1’s, for humans it is very
+                difficult to instruct computer in 0’s and 1’s so to avoid this issue we
+                write our code in human readable language (Programming
+                language)
+            </p>
+            <h2>What is JAVA?</h2>
+            <p>
+                * Java is one of the Programming Language
+            </p>
+            <img alt="image not found" src="../assets/images/Java/java_1.PNG">
+            <p>
+                *The code written in java is human readable and it is saved using
+                extension .java<br>
+                *This code is known as source code
+            </p>
+            <h2>Java Compiler:</h2>
+            <p>
+                *Java compiler converts the source code into byte code which have the
+                extension .class<br>
+                * This byte code not directly run on system<br>
+                * We need JVM (Java Virtual Machine) to run this
+            </p>
+            <h2>Java Interpreter:</h2>
+            <p>
+                *Converts byte code to machine code i.e. 0’s and 1’s<br>
+                *It translate the byte code line by line to machine code
+            </p>
+            <h2>Why Java is platform Independent?</h2>
+            <p>→ It means that byte code can run on all operating system<br>
+                → We need to convert source code to machine code so computer can
+                understand it.<br>
+                → Compiler helps in doing this by turning it into executable code.<br>
+                → This executable code is a set of instruction s for the computer<br>
+                → After compiling C/C++ code we get .exe file which is platform dependent.<br>
+                → But after compiling Java code we get .class file which is Platform independent->WORA(Write Once Run
+                Anywhere)<br>
+                → In java we get byte code, JVM converts this to machine code.<br>
+                → Java is platform independent but JVM is platform dependent.
+            </p>
+            <img alt="image not found" src="../assets/images/Java/java_arch.PNG">
+            <h2>JDK</h2>
+            <p>* Provide Environment to develop and run the java program.<br>
+                * It is a package that includes :-<br>
+                1. Development tools :- To provide an environment to run your
+                program.<br>
+                2. JRE :- To Execute your program.<br>
+                3. A compiler :- javac<br>
+                4. Archiver :- Jar<br>
+                5. Docs generator :- Javadoc<br>
+                6. Interpreter/loader
+            </p>
+            <h2>JRE</h2>
+            <p>* It is an installation package that provides environment to only run the
+                program. <br>
+                *It consist of :- <br>
+                1. Deployment technology<br>
+                2. User interface toolkit<br>
+                3. Integration libraries<br>
+                4. Base libraries<br>
+                5. JVM :- Java virtual Machine
+            </p>
+            <h2>Compile Time:</h2>
+            <img alt="image not found" src="../assets/images/Java/java-class.PNG">
+            <p>After we get the .class file the next thing happen at runtime : <br>
+                1. Class loader loads all classes needed to execute the program.<br>
+                2. JVM sends code to bytecode verifier to check the format of code</p>
+            <h2>Runtime:</h2>
+            <img alt="image not found" src="../assets/images/Java/java_runtime.PNG">
+            <h2>(How JVM Works) class Loader</h2>
+            <h3>Loading</h3>
+            <p>→ Read .class file and generate binary data.<br>
+                → an Object of this class is created in heap
+            </p>
+            <h3>Linking</h3>
+            <p>
+                → JVM verifies the .class file <br>
+                → allocates memory for class variables and default values <br>
+                → replace symbolic references from the type with direct reference.
+            </p>
+            <h3>Initialization</h3>
+            <p>→ All static variables are assigned with their values defined in the code 
+                and static bock. <br>
+                → JVM contains the stack and heap memory locations. 
+                </p>
+                <h2>JVM Execution</h2>
+               <h3>Interpreter</h3>
+               
+        </div>
+    </div>
+    <script>
+        function openForm() {
+                document.getElementById("content").style.display = "block";
+            }
+    
+            function closeForm() {
+                document.getElementById("content").style.display = "none";
+            }
+    </script>
+        <script src="../assets/js/progress.js">
+        </script>
+        <script src="../assets/js/tawk.js"></script>
+        <script src="../assets/js/params.js"></script>
+</body>
+
+</html>
